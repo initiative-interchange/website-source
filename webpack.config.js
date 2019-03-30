@@ -5,10 +5,15 @@ const assetFolder = path.resolve(__dirname, 'assets')
 
 module.exports = {
   entry: {
-    landing_page: path.join(sourceFolder, 'landing_page.js')
+    landing_page: path.join(sourceFolder, 'landing_page.js'),
+    nav: path.join(sourceFolder, 'nav')
   },
   output: {
     path: path.join(assetFolder, 'js')
   },
-  mode: 'development'
+  mode: 'development',
+  optimization: {
+    usedExports: true,
+    // TODO: chunk splitting
+  }
 }

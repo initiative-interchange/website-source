@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "animejs": "^3.0.1",
+    "babel-loader": "^8.0.5",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
