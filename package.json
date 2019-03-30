@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack && bundle exec jekyll build",
-    "serve": "concurrently \"webpack --watch\" \"bundle exec jekyll serve\""
+    "serve": "concurrently \"webpack --watch\" \"bundle exec jekyll serve --watch\""
   },
   "author": "",
   "license": "ISC",

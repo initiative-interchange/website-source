@@ -1,0 +1,34 @@
+// Page example
+
+@font-face {
+    font-family: 'Avenir Next Ultra Light';
+    src: url('/assets/fonts/AvenirNext-UltraLight.ttf')
+}
+
+@font-face {
+    font-family: 'Avenir Next Regular';
+    src: url('/assets/fonts/AvenirNext-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'Avenir Next Medium';
+    src: url('/assets/fonts/AvenirNext-Medium.ttf')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/assets/images/BG.png');
+    background-size: cover;
+}
+
+.content {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
