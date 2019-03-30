@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./_js/common.js":
+/*!***********************!*\
+  !*** ./_js/common.js ***!
+  \***********************/
+/*! exports provided: openNavigation, closeNavigation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"openNavigation\", function() { return openNavigation; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"closeNavigation\", function() { return closeNavigation; });\nfunction openNavigation() {\n    console.log('open!')\n}\n\nfunction closeNavigation() {\n    console.log('close!')\n}\n\n//# sourceURL=webpack:///./_js/common.js?");
+
+/***/ }),
+
 /***/ "./_js/landing_page.js":
 /*!*****************************!*\
   !*** ./_js/landing_page.js ***!
@@ -94,7 +106,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! animejs */ \"./node_modules/animejs/lib/anime.es.js\");\n\n\n\nfunction setupScrollAnimation () {\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.page').removeClass('hidden')\n\n  const halfPage = window.innerHeight / 2\n\n  const timeline = animejs__WEBPACK_IMPORTED_MODULE_1__[\"default\"].timeline({\n    duration: document.body.clientHeight,\n    autoplay: false\n  })\n\n  for (const el of jquery__WEBPACK_IMPORTED_MODULE_0___default()('.fade-in')) {\n    timeline.add({\n      targets: el,\n      opacity: [0, 1],\n      duration: el.clientHeight,\n      easing: 'easeInQuint'\n    }, el.offsetTop - el.clientHeight / 2)\n  }\n\n  for (const el of jquery__WEBPACK_IMPORTED_MODULE_0___default()('.fade-out')) {\n    timeline.add({\n      targets: el,\n      opacity: [1, 0],\n      duration: el.clientHeight,\n      easing: 'easeOutQuad'\n    }, el.offsetTop + el.clientHeight / 2)\n  }\n\n  function updateAnimation () {\n    const progress = Math.max(0, window.scrollY) + halfPage\n    timeline.seek(progress)\n  }\n  document.body.onscroll = updateAnimation\n  updateAnimation()\n}\n\ndocument.body.onresize = setupScrollAnimation\nsetupScrollAnimation()\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()('.nav-button').click(function () {\n  console.log('click')\n})\n\n\n//# sourceURL=webpack:///./_js/landing_page.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! animejs */ \"./node_modules/animejs/lib/anime.es.js\");\n/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./common */ \"./_js/common.js\");\n\n\n\n\n\nfunction setupScrollAnimation () {\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.page').removeClass('hidden')\n\n  const halfPage = window.innerHeight / 2\n\n  const timeline = animejs__WEBPACK_IMPORTED_MODULE_1__[\"default\"].timeline({\n    duration: document.body.clientHeight,\n    autoplay: false\n  })\n\n  for (const el of jquery__WEBPACK_IMPORTED_MODULE_0___default()('.fade-in')) {\n    timeline.add({\n      targets: el,\n      opacity: [0, 1],\n      duration: el.clientHeight,\n      easing: 'easeInQuint'\n    }, el.offsetTop - el.clientHeight / 2)\n  }\n\n  for (const el of jquery__WEBPACK_IMPORTED_MODULE_0___default()('.fade-out')) {\n    timeline.add({\n      targets: el,\n      opacity: [1, 0],\n      duration: el.clientHeight,\n      easing: 'easeOutQuad'\n    }, el.offsetTop + el.clientHeight / 2)\n  }\n\n  function updateAnimation () {\n    const progress = Math.max(0, window.scrollY) + halfPage\n    timeline.seek(progress)\n  }\n  document.body.onscroll = updateAnimation\n  updateAnimation()\n}\n\ndocument.body.onresize = setupScrollAnimation\nsetupScrollAnimation()\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()('.nav-button').click(function () {\n  Object(_common__WEBPACK_IMPORTED_MODULE_2__[\"openNavigation\"])()\n})\n\n\n//# sourceURL=webpack:///./_js/landing_page.js?");
 
 /***/ }),
 

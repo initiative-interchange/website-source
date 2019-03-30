@@ -1,6 +1,8 @@
 import $ from 'jquery'
 import anime from 'animejs'
 
+import { openNavigation, closeNavigation } from './common'
+
 function setupScrollAnimation () {
   $('.page').removeClass('hidden')
 
@@ -41,5 +43,5 @@ document.body.onresize = setupScrollAnimation
 setupScrollAnimation()
 
 $('.nav-button').click(function () {
-  console.log('click')
+  openNavigation()
 })
