@@ -1,8 +1,6 @@
 import $ from 'jquery'
 import anime from 'animejs'
 
-console.log('foo')
-
 function setupScrollAnimation () {
   $('.page').removeClass('hidden')
 
