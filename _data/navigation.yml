@@ -1,0 +1,29 @@
+- name: interactors
+  link: /blank
+  groups:
+    - name: why we connect young people
+      link: /blank
+    - name: members
+      link: /blank
+
+- name: philantropy
+  link: /blank
+  groups:
+    - name: why we support education
+      link: /blank
+    - name: partners
+      link: /blank
+
+- name: events
+  link: /blank
+  groups:
+    - name: upcoming events
+      link: /blank
+    - name: past events
+      link: /blank
+
+- name: news
+  link: /blank
+
+- name: contact us
+  link: /blank
