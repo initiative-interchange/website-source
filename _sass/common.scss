@@ -48,7 +48,7 @@ body {
     display: none;
 }
 
-.slogan {
+@mixin header {
     font-family: 'Avenir Next Ultra Light';
     font-size: 31pt;
     line-height: 37pt;
@@ -56,12 +56,20 @@ body {
     color: #166762;
 }
 
-.text {
+.slogan {
+    @include header;
+}
+
+@mixin text {
     font-family: 'Avenir Next Regular';
     font-size: 10pt;
     line-height: 15pt;
     text-align: center;
     color: #595959;
+}
+
+.text {
+    @include text;
 }
 
 .medium {

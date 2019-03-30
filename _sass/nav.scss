@@ -1,83 +1,95 @@
-
 nav {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 
-    .background {
-        @include cover;
-        @include blurry_background();
-        opacity: 0;
-        transition: opacity .2s;
-    }
+  > .background {
+    @include cover;
+    @include blurry_background();
 
-    .links {
-        @include cover;
-        height: 90%;
-        top: 0;
-        padding: 10%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
 
+  .links {
+    @include cover;
+    height: 90%;
+    top: 0;
+    padding: 10%;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .nav-item {
+      opacity: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .group-header {
+        @include header;
+        font-size: 24pt;
+        text-decoration: none;
+      }
+
+      .group {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
 
-        .nav-item {
-            opacity: 0;
-
-            a {
-                text-decoration: none;
-                font-size: 31pt;
-            }
-
-            .group {
-                display: flex;
-                flex-direction: column;
-                 
-                a {
-                    font-size: 10pt;
-                }
-            }
+        .group-link {
+          @include text;
+          text-decoration: none;
         }
+      }
+    }
+  }
+
+  .nav-button {
+    @include cover;
+    height: 10%;
+    bottom: 0;
+
+    .background {
+      @include cover;
+      background-color: white;
+      border-top: 1px solid #166762;
     }
 
-    .nav-button {
-        @include cover;
-        height: 10%;
-        bottom: 0;
+    .icon {
+      @include cover;
 
-        .background {
-            @include cover;
-            background-color: white;
-            border-top: 1px solid #166762;
-            opacity: 1;
-        }
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        .icon {
-            @include cover;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .nav-button-image {
-                height: 30%;
-                width: 100%;
-            }
-        }
+      .nav-button-image {
+        height: 30%;
+        width: 100%;
+      }
     }
+  }
 }
 
 nav.open {
-    .background {
-        opacity: 1;
-    }
+  .background {
+    opacity: 1;
+    display: block;
+  }
 
-    .nav-button {
-        .background {
-            opacity: 0;
-        }
+  .links {
+    display: flex;
+  }
+
+  .nav-button {
+    .background {
+      opacity: 0;
     }
+  }
 }
