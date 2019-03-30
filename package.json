@@ -1,0 +1,21 @@
+{
+  "name": "jekyll_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack && bundle exec jekyll build",
+    "serve": "concurrently \"webpack --watch\" \"bundle exec jekyll serve\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^3.0.1",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
