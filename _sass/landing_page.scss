@@ -1,205 +1,205 @@
-.content {
+.content.landing-page {
   @include blurry_background;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.page-spacer {
-  height: 25vh;
-}
+  .page-spacer {
+    height: 25vh;
+  }
 
-.half-page-spacer {
-  height: 12.5vh;
-}
+  .half-page-spacer {
+    height: 12.5vh;
+  }
 
-.page {
-  width: 80%;
-  height: auto;
-  display: grid;
-}
+  .page {
+    width: 80%;
+    height: auto;
+    display: grid;
+  }
 
-.page > * {
-  width: 100%;
-}
+  .page > * {
+    width: 100%;
+  }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.button {
-  width: 100%;
-  height: 100%;
-  padding: 8pt;
+  .button {
+    width: 100%;
+    height: 100%;
+    padding: 8pt;
 
-  text-align: center;
+    text-align: center;
 
-  border: 1.5pt #166762 solid;
-  font-family: "Avenir Next";
-  font-weight: bold;
-  font-size: 10pt;
-  letter-spacing: 2pt;
-  color: #166762;
-}
+    border: 1.5pt #166762 solid;
+    font-family: "Avenir Next";
+    font-weight: bold;
+    font-size: 10pt;
+    letter-spacing: 2pt;
+    color: #166762;
+  }
 
-.vertical-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .vertical-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-#firstPage {
-  width: 60%;
-  grid-template-columns: 1fr 10% 1fr;
-  grid-template-rows: 1fr 2em auto 2em auto 2em auto;
-  grid-template-areas:
-    "logo logo logo"
-    ". . ."
-    "slogan slogan slogan"
-    ". . ."
-    "descr descr descr"
-    ". . ."
-    "donate . join";
-}
+  #firstPage {
+    width: 60%;
+    grid-template-columns: 1fr 10% 1fr;
+    grid-template-rows: 1fr 2em auto 2em auto 2em auto;
+    grid-template-areas:
+      "logo logo logo"
+      ". . ."
+      "slogan slogan slogan"
+      ". . ."
+      "descr descr descr"
+      ". . ."
+      "donate . join";
+  }
 
-#firstPage > .logo {
-  grid-area: logo;
-}
+  #firstPage > .logo {
+    grid-area: logo;
+  }
 
-.logo > img {
-  width: 152pt;
-}
+  .logo > img {
+    width: 152pt;
+  }
 
-#firstPage > .slogan {
-  grid-area: slogan;
-}
+  #firstPage > .slogan {
+    grid-area: slogan;
+  }
 
-#firstPage > .descr {
-  grid-area: descr;
-}
+  #firstPage > .descr {
+    grid-area: descr;
+  }
 
-#firstPage > .donate {
-  grid-area: donate;
-}
+  #firstPage > .donate {
+    grid-area: donate;
+  }
 
-#firstPage > .join {
-  grid-area: join;
-}
+  #firstPage > .join {
+    grid-area: join;
+  }
 
-#secondPage {
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2em auto 2em auto 2em auto 2em auto;
-  grid-template-areas:
-    "icon"
-    "."
-    "slogan"
-    "."
-    "descr"
-    "."
-    "find-more"
-    "."
-    "links";
-}
+  #secondPage {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2em auto 2em auto 2em auto 2em auto;
+    grid-template-areas:
+      "icon"
+      "."
+      "slogan"
+      "."
+      "descr"
+      "."
+      "find-more"
+      "."
+      "links";
+  }
 
-#secondPage > .connect {
-  grid-area: icon;
-}
+  #secondPage > .connect {
+    grid-area: icon;
+  }
 
-#secondPage > .slogan {
-  grid-area: slogan;
-}
+  #secondPage > .slogan {
+    grid-area: slogan;
+  }
 
-#secondPage > .descr {
-  grid-area: descr;
-}
+  #secondPage > .descr {
+    grid-area: descr;
+  }
 
-#secondPage > .find-more {
-  grid-area: find-more;
-}
+  #secondPage > .find-more {
+    grid-area: find-more;
+  }
 
-#secondPage > .links {
-  grid-area: links;
-}
+  #secondPage > .links {
+    grid-area: links;
+  }
 
-#videoPage {
-  width: 100vw;
-  max-height: 100vh;
-}
+  #videoPage {
+    width: 100vw;
+    max-height: 100vh;
+  }
 
-#thirdPage {
-  grid-template-columns: 1fr;
-  grid-template-rows: 2em 2em auto 2em auto 2em auto 2em auto 2em auto;
-  grid-template-areas:
-    "icon"
-    "."
-    "slogan"
-    "."
-    "p1"
-    "."
-    "p2"
-    "."
-    "find-more"
-    "."
-    "links";
-}
+  #thirdPage {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2em 2em auto 2em auto 2em auto 2em auto 2em auto;
+    grid-template-areas:
+      "icon"
+      "."
+      "slogan"
+      "."
+      "p1"
+      "."
+      "p2"
+      "."
+      "find-more"
+      "."
+      "links";
+  }
 
-#thirdPage > .connect {
-  grid-area: icon;
-}
+  #thirdPage > .connect {
+    grid-area: icon;
+  }
 
-#thirdPage > .slogan {
-  grid-area: slogan;
-}
+  #thirdPage > .slogan {
+    grid-area: slogan;
+  }
 
-#thirdPage > .p1 {
-  grid-area: p1;
-}
+  #thirdPage > .p1 {
+    grid-area: p1;
+  }
 
-#thirdPage > .p2 {
-  grid-area: p2;
-}
+  #thirdPage > .p2 {
+    grid-area: p2;
+  }
 
-#thirdPage > .find-more {
-  grid-area: find-more;
-}
+  #thirdPage > .find-more {
+    grid-area: find-more;
+  }
 
-#thirdPage > .links {
-  grid-area: links;
-}
+  #thirdPage > .links {
+    grid-area: links;
+  }
 
-#badges-container {
-  width: 50%;
-  display: grid;
-  grid-template-columns: 15% auto 15% auto 15%;
-  grid-template-rows: auto 10vw auto;
-  grid-template-areas:
-    "text text text text text"
-    ". . . . ."
-    ". education . partnerships .";
-}
+  #badges-container {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 15% auto 15% auto 15%;
+    grid-template-rows: auto 10vw auto;
+    grid-template-areas:
+      "text text text text text"
+      ". . . . ."
+      ". education . partnerships .";
+  }
 
-#badges-container > .text {
-  grid-area: text;
+  #badges-container > .text {
+    grid-area: text;
 
-  letter-spacing: 0.74pt;
-  font-size: 7pt;
-  line-height: 13pt;
-}
+    letter-spacing: 0.74pt;
+    font-size: 7pt;
+    line-height: 13pt;
+  }
 
-#badges-container > img {
-  width: 100%;
-  filter: saturate(0) brightness(2);
-}
+  #badges-container > img {
+    width: 100%;
+    filter: saturate(0) brightness(2);
+  }
 
-#badges-container > .education {
-  grid-area: education;
-}
+  #badges-container > .education {
+    grid-area: education;
+  }
 
-#badges-container > .partnerships {
-  grid-area: partnerships;
+  #badges-container > .partnerships {
+    grid-area: partnerships;
+  }
 }

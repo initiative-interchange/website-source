@@ -1,0 +1,40 @@
+.content.info-page {
+  @include blurry_background;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > * {
+    width: 80%;
+  }
+
+  .hero {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+
+    .background {
+      @include cover;
+      object-fit: cover;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+
+    .hero-header-wrapper {
+      @include cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .hero-header {
+        @include header;
+        font-size: 41pt;
+        color: white;
+      }
+    }
+  }
+
+  h2,
+  p {
+    margin: 1em;
+  }
+}

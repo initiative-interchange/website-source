@@ -32,6 +32,11 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 main {
   width: 100vw;
 }
@@ -52,6 +57,10 @@ main {
   @include header;
 }
 
+h2 {
+  @include header;
+}
+
 @mixin text {
   font-family: "Avenir Next Regular";
   font-size: 10pt;
@@ -61,6 +70,10 @@ main {
 }
 
 .text {
+  @include text;
+}
+
+p {
   @include text;
 }
 

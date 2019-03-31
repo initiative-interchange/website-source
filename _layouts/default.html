@@ -12,13 +12,12 @@
 </head>
 
 <body>
-    <div class="content">
+    <main>
         {{ content }}
-    </div>
+    </main>
     {% include nav.html %}
     {% for script in page.scripts %}
         <script src="assets/js/{{ script }}.js"></script>
     {% endfor %}
-    <script src="assets/js/nav.js"></script>
 </body>
 </html>
