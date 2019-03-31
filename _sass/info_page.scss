@@ -9,6 +9,10 @@
     width: 80%;
   }
 
+  .block-image {
+    width: 50%;
+  }
+
   .hero {
     height: 50vh;
     width: 100%;
@@ -31,6 +35,10 @@
         color: white;
       }
     }
+  }
+
+  a {
+    @include text;
   }
 
   h2,

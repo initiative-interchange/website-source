@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
-import { toggle } from './lib/nav'
+import { toggle, close } from './lib/nav'
 
-$('.nav-button').click(function () {
-  toggle()
-})
+$('.nav-button').click(toggle)
+
+$('nav a').click(close)

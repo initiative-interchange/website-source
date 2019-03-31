@@ -10,6 +10,8 @@ nav {
   bottom: 0;
   left: 0;
 
+  pointer-events: none;
+
   > .background {
     @include cover;
     @include blurry_background();
@@ -61,6 +63,8 @@ nav {
     height: 10%;
     bottom: 0;
 
+    pointer-events: all;
+
     .background {
       @include cover;
       background-color: white;
@@ -83,6 +87,8 @@ nav {
 }
 
 nav.open {
+  pointer-events: all;
+  
   .background {
     opacity: 1;
     display: block;

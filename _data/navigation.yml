@@ -7,12 +7,12 @@
       link: /blank
 
 - name: philantropy
-  link: /philantropy
+  link: /philantropy.html
   groups:
     - name: why we support education
-      link: /blank
+      link: /philantropy.html#why-we-support-education
     - name: partners
-      link: /blank
+      link: /philantropy.html#partners
 
 - name: events
   link: /blank

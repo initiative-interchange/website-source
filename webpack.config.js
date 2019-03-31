@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.join(assetFolder, 'js')
   },
-  mode: 'production',
+  mode: 'development',
   optimization: {
     usedExports: true,
     // TODO: chunk splitting
