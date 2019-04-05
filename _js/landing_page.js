@@ -1,13 +1,20 @@
 import $ from 'jquery'
 import anime from 'animejs'
 
-function setupScrollAnimation () {
-  $('.page').removeClass('hidden')
+const outerElement = $('main')
 
-  const halfPage = window.innerHeight / 2
+let cleanUpAnimation
+
+function setupScrollAnimation () {
+
+  $('.page').removeClass('hidden')
+  const firstPage = $('.page').first()
+  $('.top-page-spacer').css('height', (outerElement.height() - firstPage.height())/2)
+
+  const halfPage = outerElement.height() / 2
 
   const timeline = anime.timeline({
-    duration: document.body.clientHeight,
+    duration: outerElement.height(),
     autoplay: false
   })
 
@@ -30,10 +37,16 @@ function setupScrollAnimation () {
   }
 
   function updateAnimation () {
-    const progress = Math.max(0, window.scrollY) + halfPage
+    const progress = Math.max(0, outerElement.scrollTop()) + halfPage
     timeline.seek(progress)
   }
-  document.body.onscroll = updateAnimation
+
+  if (typeof(cleanUpAnimation) === 'function') {
+    cleanUpAnimation()
+  }
+  outerElement.scroll(updateAnimation)
+  cleanUpAnimation = () => outerElement.off('scroll', updateAnimation)
+
   updateAnimation()
 }
 
