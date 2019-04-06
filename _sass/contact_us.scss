@@ -1,0 +1,39 @@
+.content.contact {
+  @include blurry_background;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &::after {
+    content: "";
+    @include large-spacing();
+  }
+
+  h1 {
+    @include green-header-text();
+    @include extra-large-spacing();
+  }
+
+  .email {
+    @include light-text();
+    @include large-spacing();
+
+    &::after {
+      content: ">";
+      margin-left: $small-spacing;
+    }
+  }
+
+  h2 {
+    @include board-ressort-heading();
+    @include extra-small-spacing();
+  }
+
+  #interaction-circles,
+  #administration-circles {
+    height: 30rem;
+    width: 100%;
+    @include small-spacing();
+  }
+}

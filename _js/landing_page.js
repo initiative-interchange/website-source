@@ -4,9 +4,6 @@ import anime from 'animejs'
 $(() => {
   const outerElement = $('main')
 
-  document.body.onresize = setupScrollAnimation
-  setupScrollAnimation()
-
   let cleanUpAnimation
 
   function setupScrollAnimation() {
@@ -53,4 +50,7 @@ $(() => {
 
     updateAnimation()
   }
+
+  document.body.onresize = setupScrollAnimation
+  setupScrollAnimation()
 })

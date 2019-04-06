@@ -8,13 +8,10 @@ $(() => {
   const factor = 1.5
   const percent = 100/factor
 
-  document.body.onresize = setupAnimation
-  setupAnimation()
-
   let removeAnimation;
 
   function setupAnimation() {
-    
+
     const animation = anime({
       targets: hero.get(),
       clipPath: `polygon(0 0, 100% 0, 100% ${percent}%, 0 ${percent}%)`,
@@ -34,4 +31,7 @@ $(() => {
   
     updateAnimation()
   }
+
+  document.body.onresize = setupAnimation
+  setupAnimation()
 })

@@ -158,9 +158,13 @@ html {
   font-size: .9rem;
 }
 
-.text.board-ressort-heading {
+@mixin board-ressort-heading {
   @include text();
   letter-spacing: .17rem;
+}
+
+.text.board-ressort-heading {
+  @include board-ressort-heading();
 }
 
 .text.board-member-name {
