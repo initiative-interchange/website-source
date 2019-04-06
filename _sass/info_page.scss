@@ -41,6 +41,7 @@
   p {
     @include text();
     @include text-center();
+    @include normal-spacing();
   }
 
   a {

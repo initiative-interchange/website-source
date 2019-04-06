@@ -21,10 +21,13 @@
     }
 
     h1 {
-      // override large spacing for headings on first page
       @include small-spacing();
       // the headings are a bit bigger
       width: 90%;
+    }
+
+    p {
+      @include normal-spacing();
     }
 
     &:first-of-type {
@@ -49,6 +52,12 @@
       img {
         @include normal-spacing();
       }
+    }
+
+    .video-player {
+      width: 100vw;
+      // arbitrarily set
+      max-width: 600px;
     }
 
     .icon {

@@ -38,11 +38,3 @@ $extra-large-spacing: 6rem;
 .extra-large-spacing {
   @include extra-large-spacing();
 }
-
-p {
-  @include normal-spacing();
-}
-
-h1 {
-  @include large-spacing();
-}
