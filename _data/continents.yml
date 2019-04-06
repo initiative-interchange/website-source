@@ -1,0 +1,17 @@
+- name: Europe
+  countries:
+    - name: Austria
+      clubs:
+        - Interact Club Donautal
+        - Interact Club Gleisdorf
+        - Interact Club Tanzenberg
+        - Interact Club Wien-Eins
+        - Interact Club Ybbs/Donau
+    - name: Bulgaria
+      clubs:
+        - Interact Club Sofia
+    - name: France
+      clubs:
+        - Interact Club Aiglon
+        - Interact Club d’Aumale
+        - Interact Club Hoche de Versailles

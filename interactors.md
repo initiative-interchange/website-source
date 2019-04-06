@@ -2,34 +2,9 @@
 layout: info_page
 scripts:
   - info_page
-hero: assets/images/philantropy/hero.png
+hero: assets/images/interactors/hero.png
 heading: interactors
 title: Interactors
-stats:
-  - description: members
-    number: 1942
-  - description: countries
-    number: 20
-  - description: interact clubs
-    number: 74
-continents: 
-  - name: Europe
-    countries:
-      - name: Austria
-        clubs:
-          - Interact Club Donautal
-          - Interact Club Gleisdorf
-          - Interact Club Tanzenberg
-          - Interact Club Wien-Eins
-          - Interact Club Ybbs/Donau
-      - name: Bulgaria
-        clubs:
-          - Interact Club Sofia
-      - name: France
-        clubs:
-          - Interact Club Aiglon
-          - Interact Club d’Aumale
-          - Interact Club Hoche de Versailles
 ---
 
 ## why we connect young people
@@ -41,7 +16,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla scel
 </div>
 
 <div class="column-layout normal-spacing">
-{% for item in page.stats %}
+{% for item in site.data.stats %}
 <p class="stats">
 {{item.number}} {{item.description}}
 </p>
@@ -54,7 +29,7 @@ Aliquam malesuada metus ac massa porttitor tincidunt. Sed lectus odio, tincidunt
 
 The following Interact clubs have joined Initiative Interchange, sorted alphabetically by continent, country and club name. You can send them an e-mail by clicking on the name of the club.
 
-{% for continent in page.continents %}
+{% for continent in site.data.continents %}
 <h3 class="continent-heading text text-center normal-spacing">
 {{ continent.name | upcase }}
 </h3>
