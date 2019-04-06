@@ -1,0 +1,172 @@
+@import 'colors.scss';
+
+@font-face {
+  font-family: "Avenir Next Ultra Light";
+  src: url("/assets/fonts/AvenirNext-UltraLight.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Next Italic";
+  src: url("/assets/fonts/AvenirNext-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("/assets/fonts/AvenirNext-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Next Medium";
+  src: url("/assets/fonts/AvenirNext-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Next Demi Bold";
+  src: url("/assets/fonts/AvenirNext-DemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("/assets/fonts/AvenirNext-Bold.ttf");
+}
+
+$small-screen-width: 320px;
+$font-scale-factor: 0.01;
+$base-font-size: 10px;
+
+html {
+  font-size: calc(#{$font-scale-factor}*(100vw - #{$small-screen-width}) + #{$base-font-size});
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+.text-center {
+  @include text-center();
+}
+
+@mixin green-header-text {
+  color: $interchange-green;
+  font-family: 'Avenir Next Ultra Light';
+  font-size: 3.1rem;
+  line-height: 3.7rem;
+  text-decoration: none;
+}
+
+.green-header-text {
+  @include green-header-text();
+}
+
+.nav-header {
+  @include green-header-text();
+  font-size: 2.4rem;
+}
+
+@mixin white-header-text {
+  color: $white;
+  font-family: 'Avenir Next Ultra Light';
+  font-size: 4.1rem;
+  line-height: 3.7rem;
+  text-decoration: none;
+}
+
+.white-header-text {
+  @include white-header-text();
+}
+
+@mixin text($font-family: 'Avenir Next Regular') {
+  color: $dark-grey;
+  font-family: $font-family;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-decoration: none;
+}
+
+.text {
+  @include text();
+}
+
+@mixin medium-text {
+  @include text('Avenir Next Medium');
+}
+
+.text.medium {
+  @include medium-text();
+}
+
+@mixin demi-bold-text {
+  @include text('Avenir Next Demi Bold');
+}
+
+.text.demi-bold {
+  @include demi-bold-text();
+}
+
+@mixin light-text {
+  @include text('Avenir Next Ultra Light');
+  color: $light-grey;
+  font-size: 1.8rem;
+  line-height: 3.7rem;
+}
+
+.text.light {
+  @include light-text();
+}
+
+@mixin underlined-text {
+  @include text();
+  text-decoration: underline;
+}
+
+.text.underline {
+  @include underlined-text();
+}
+
+.text.sdg {
+  @include medium-text();
+  font-size: .7rem;
+  line-height: 1.3rem;
+  letter-spacing: 0.074rem;
+}
+
+.text.legal-notice {
+  @include text();
+  font-size: .8rem;
+  line-height: 1.1rem;
+}
+
+.text.continent-heading {
+  @include text('Avenir Next Bold');
+  letter-spacing: 2.1rem;
+}
+
+.text.article-heading {
+  @include demi-bold-text();
+  color: $black;
+  font-size: 1.3rem;
+  letter-spacing: .18rem;
+}
+
+.text.article-meta {
+  @include text('Avenir Next Italic');
+  color: $light-grey;
+  font-size: .9rem;
+}
+
+.text.board-ressort-heading {
+  @include text();
+  letter-spacing: .17rem;
+}
+
+.text.board-member-name {
+  @include demi-bold-text();
+  color: $white;
+  line-height: 1.4rem;
+}
+
+.text.board-member {
+  @include text();
+  color: $white;
+  line-height: 1.4rem;
+}

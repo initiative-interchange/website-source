@@ -3,12 +3,12 @@
     <div class="links">
         {% for item in site.data.navigation %}
         <div class="nav-item">
-            <a href="{{ item.link }}" class="group-header">
+            <a href="{{ item.link }}" class="nav-header">
                 {{ item.name }}
             </a>
             <div class="group">
                 {% for sub_item in item.groups %}
-                <a href="{{ sub_item.link }}" class="group-link">
+                <a href="{{ sub_item.link }}" class="text text-center">
                     {{ sub_item.name }}
                 </a>
                 {% endfor %}

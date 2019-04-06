@@ -5,6 +5,11 @@
   flex-direction: column;
   align-items: center;
 
+  &::after {
+    content: '';
+    @include large-spacing();
+  }
+
   > * {
     width: 80%;
   }
@@ -29,20 +34,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      .hero-header {
-        @include header;
-        font-size: 41pt;
-        color: white;
-      }
     }
   }
 
-  a {
-    @include text;
+  a,
+  p {
+    @include text();
+    @include text-center();
   }
 
-  h2,
-  p {
-    margin: 1em;
+  a {
+    @include underlined-text();
+  }
+
+  h2 {
+    @include green-header-text();
+    @include text-center();
+    @include large-spacing();
+  }
+
+  .medium {
+    @include medium-text();
   }
 }

@@ -25,7 +25,7 @@ nav {
     @include cover;
     height: 90%;
     top: 0;
-    padding: 10%;
+    padding: 3.5rem;;
 
     display: none;
 
@@ -40,20 +40,9 @@ nav {
       flex-direction: column;
       align-items: center;
 
-      .group-header {
-        @include header;
-        font-size: 24pt;
-        text-decoration: none;
-      }
-
       .group {
         display: flex;
         flex-direction: column;
-
-        .group-link {
-          @include text;
-          text-decoration: none;
-        }
       }
     }
   }

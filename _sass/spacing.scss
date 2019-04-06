@@ -1,0 +1,48 @@
+
+$small-spacing: 1.8rem;
+$normal-spacing: 2.9rem;
+$large-spacing: 5rem;
+$extra-large-spacing: 6rem;
+
+@mixin no-spacing {
+  margin-top: 0;
+}
+.no-spacing {
+  @include no-spacing();
+}
+
+@mixin small-spacing {
+  margin-top: $small-spacing;
+}
+.small-spacing {
+  @include small-spacing();
+}
+
+@mixin normal-spacing {
+  margin-top: $normal-spacing;
+}
+.normal-spacing {
+  @include normal-spacing();
+}
+
+@mixin large-spacing {
+  margin-top: $large-spacing;
+}
+.large-spacing {
+  @include large-spacing();
+}
+
+@mixin extra-large-spacing {
+  margin-top: $extra-large-spacing;
+}
+.extra-large-spacing {
+  @include extra-large-spacing();
+}
+
+p {
+  @include normal-spacing();
+}
+
+h1 {
+  @include large-spacing();
+}

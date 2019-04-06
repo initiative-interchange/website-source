@@ -22,7 +22,10 @@ In an effort to work towards our goal of giving every child an access to primary
 
 Every Interact Club which participates in our initiative has the possibility to contact the respective UNICEF National Committee in their country. Thanks to UNICEF's expertise in the field of education and its strong international network, Initiative Interchange and Interact Clubs all around the world can count on a strong partner to achieve our goals.
 
+
+
 {:class="medium"}
 Find us on
 
+{:class="no-spacing"}
 [unicef.at/interchange](https://unicef.at/interchange)
