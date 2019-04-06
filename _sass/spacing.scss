@@ -6,7 +6,7 @@ $large-spacing: 5rem;
 $extra-large-spacing: 6rem;
 
 @mixin no-spacing {
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 .no-spacing {
   @include no-spacing();

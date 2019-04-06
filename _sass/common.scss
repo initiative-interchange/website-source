@@ -39,6 +39,11 @@ main {
   display: none;
 }
 
+.full-width {
+  width: 100%;
+  height: auto;
+}
+
 @mixin centered-columns {
   display: flex;
   flex-direction: column;

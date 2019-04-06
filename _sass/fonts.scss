@@ -58,9 +58,13 @@ html {
   @include green-header-text();
 }
 
-.nav-header {
+@mixin small-green-header {
   @include green-header-text();
   font-size: 2.4rem;
+}
+
+.small-green-header {
+  @include small-green-header();
 }
 
 @mixin white-header-text {
@@ -138,7 +142,7 @@ html {
 
 .text.continent-heading {
   @include text('Avenir Next Bold');
-  letter-spacing: 2.1rem;
+  letter-spacing: 2.1px;
 }
 
 .text.article-heading {

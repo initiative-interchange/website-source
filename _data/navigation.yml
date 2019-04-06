@@ -1,10 +1,10 @@
 - name: interactors
-  link: /blank
+  link: /interactors.html
   groups:
     - name: why we connect young people
-      link: /blank
+      link: /interactors.html#why-we-connect-young-people
     - name: members
-      link: /blank
+      link: /interactors.html#members
 
 - name: philantropy
   link: /philantropy.html
