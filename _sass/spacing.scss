@@ -1,14 +1,22 @@
 
+$extra-small-spacing: .7rem;
 $small-spacing: 1.8rem;
 $normal-spacing: 2.9rem;
 $large-spacing: 5rem;
 $extra-large-spacing: 6rem;
 
 @mixin no-spacing {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 .no-spacing {
   @include no-spacing();
+}
+
+@mixin extra-small-spacing {
+  margin-top: $extra-small-spacing;
+}
+.extra-small-spacing {
+  @include extra-small-spacing();
 }
 
 @mixin small-spacing {

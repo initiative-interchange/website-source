@@ -10,8 +10,12 @@
     @include large-spacing();
   }
 
-  > * {
+  > h2 {
     width: 80%;
+  }
+
+  > p {
+    width: 75%;
   }
 
   .block-image {
