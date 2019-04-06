@@ -2,6 +2,9 @@
 layout: info_page
 scripts:
 - info_page
+hero: assets/images/philantropy/hero.png
+heading: philantropy
+title: Philantropy
 ---
 
 ## why we support education
