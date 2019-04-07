@@ -1,0 +1,18 @@
+
+{% assign members = site.members | where: "ressort", include.ressort %}
+
+{% for member in members %}
+<figure class="circle hidden" data-id="{{ forloop.index }}">
+  <img src="assets/images/contact/faces/{{ member.face }}"/>
+  <figcaption>
+    <p class="text board-member-name">{{ member.name }}</p>
+    <p class="text board-member">{{ member.occupation }}</p>
+
+    <div class="small-spacing">
+      {% for role in member.roles %}
+      <p class="text board-member">{{ role }}</p>
+      {% endfor %}
+    </div>
+  </figcaption>
+</figure>
+{% endfor %}
