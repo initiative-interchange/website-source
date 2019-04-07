@@ -2,7 +2,7 @@
 layout: empty
 content_class: contact
 scripts:
- - landing_page
+ - contact_us
 title: Initiative Interchange
 ---
 
@@ -17,6 +17,24 @@ what's your email address?
 
 ## INTERACTION RESORT
 
-<div id="administration-circles"></div>
+<div id="administration-circles">
+  {% assign admins = site.members | where: 'administration', member.ressort %}
+
+  {% for member in admins %}
+  <figure class="circle" data-id="{{ forloop.index }}">
+    <img src="assets/images/contact/faces/{{ member.face }}"/>
+    <figcaption>
+      <p class="text board-member-name">{{ member.name }}</p>
+      <p class="text board-member">{{ member.occupation }}</p>
+
+      <div class="small-spacing">
+        {% for role in member.roles %}
+        <p class="text board-member">{{ role }}</p>
+        {% endfor %}
+      </div>
+    </figcaption>
+  </figure>
+  {% endfor %}
+</div>
 
 ## ADMINISTRATION RESORT
