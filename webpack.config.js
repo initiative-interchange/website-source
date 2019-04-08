@@ -13,9 +13,25 @@ module.exports = {
   output: {
     path: path.join(assetFolder, 'js')
   },
-  mode: 'development',
+  mode: 'production',
   optimization: {
     usedExports: true,
-    // TODO: chunk splitting
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
   }
 }

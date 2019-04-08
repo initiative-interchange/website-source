@@ -19,6 +19,12 @@ collections:
   - articles
   - members
 
+defaults:
+  - scope:
+      path: "assets/js"
+    values:
+      script: true
+
 
 # Build settings
 markdown: kramdown
