@@ -1,12 +1,11 @@
 import $ from 'jquery'
 import anime from 'animejs'
 
-$(() => {
-  const outerElement = $('main')
-
+function setupScrollAnimation(outerElement) {
+  
   let cleanUpAnimation
 
-  function setupScrollAnimation() {
+  function createScrollAnimation() {
 
     $('.page').removeClass('hidden')
     const firstPage = $('.page').first()
@@ -51,6 +50,12 @@ $(() => {
     updateAnimation()
   }
 
-  document.body.onresize = setupScrollAnimation
-  setupScrollAnimation()
+  document.body.onresize = createScrollAnimation
+  createScrollAnimation()
+}
+
+$(() => {
+  const mainContainer = $('main')
+
+  setupScrollAnimation(mainContainer)
 })
