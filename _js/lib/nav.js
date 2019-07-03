@@ -1,7 +1,7 @@
 import $ from 'jquery'
 import anime from 'animejs'
 
-const exitAnimation = anime({
+const itemExitAnimation = anime({
     targets: '.nav-item',
     opacity: [1, 0],
     duration: 200,
@@ -9,7 +9,7 @@ const exitAnimation = anime({
     autoplay: false
 })
 
-const entryAnimation = anime({
+const itemEntryAnimation = anime({
     targets: '.nav-item',
     opacity: [0, 1],
     translateY: [200, 1],
@@ -86,8 +86,8 @@ barEntryAnimation.add({
 }, 0)
 
 function reset() {
-    exitAnimation.reset()
-    entryAnimation.reset()
+    itemExitAnimation.reset()
+    itemEntryAnimation.reset()
     barEntryAnimation.reset()
     barExitAnimation.reset()
 }
@@ -96,13 +96,13 @@ export function open() {
     $('nav').addClass('open')
     reset()
     barEntryAnimation.play()
-    entryAnimation.play()
+    itemEntryAnimation.play()
 }
 export function close() {
     $('nav').removeClass('open')
     reset()
     barExitAnimation.play()
-    exitAnimation.play()
+    itemExitAnimation.play()
 }
 export function isOpen() {
     return $('nav').hasClass('open')

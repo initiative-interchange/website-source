@@ -17,7 +17,7 @@
     </main>
     {% include nav.html %}
 
-    {% assign import_scripts = page.scripts | push: 'nav' %}
+    {% assign import_scripts = page.scripts | push: 'nav_page' %}
 
     {% assign js_files = site.static_files | where: "script", true %}
     {% assign import_files = '' | split: ',' %}
@@ -25,7 +25,7 @@
     {% for file in js_files %}
         {% for script in import_scripts %}
             {% if file.basename contains script %} 
-                <script src="assets/js/{{ file.name }}"></script>
+                <script defer src="assets/js/{{ file.name }}"></script>
                 {% break %}
             {% endif %}
         {% endfor %}
