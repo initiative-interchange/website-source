@@ -6,4 +6,4 @@ node_modules
 Gemfile.lock
 package-lock.json
 .DS_Store
-vendor
+vendor/
