@@ -222,3 +222,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/node,ruby,linux,macos,jekyll,windows
+
+##  Bundle
+.bundle
+vendor
