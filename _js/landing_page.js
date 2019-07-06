@@ -1,6 +1,5 @@
 import $ from 'jquery'
 import anime from 'animejs'
-
 import PolyDecomp from 'poly-decomp'
 window.decomp = PolyDecomp
 
@@ -15,41 +14,7 @@ import {
 import MatterAttractors from 'matter-attractors'
 import { jumpForwardInSimulation } from './lib/physics'
 
-use(MatterAttractors)
-
-class Circle {
-  constructor(element, body) {
-    this.element = element
-    this.body = body
-  }
-
-  static fromDOMNode(domNode) {
-    const element = $(domNode)
-    const parent = element.parent()
-    const margin = parseFloat(element.css('margin'))
-
-    const group =  element.data('group')
-
-    const colorLookup = {
-      1: 'red',
-      2: 'green',
-      3: 'blue'
-    }
-
-    const body = Bodies.circle(
-      (Math.random() + (group === 2 ? 1 : -1)) * parent.width(), 
-      Math.random() * parent.height(),
-      element.width() / 2 + margin,
-      {
-        attractionGroup: group,
-        render: {
-          fillStyle: colorLookup[group]
-        }
-      })
-
-    return new Circle(element, body)
-  }
-}
+//use(MatterAttractors)
 
 function setupScrollAnimation(outerElement) {
 
@@ -106,132 +71,88 @@ function setupScrollAnimation(outerElement) {
 
 async function setupBubbles(bubbleContainer, scrollContainer) {
   const parallexFactor = 2
+  const fillHeight = 1000
 
   const engine = Engine.create()
 
   const world = engine.world;
-  world.gravity.scale = 0;
+  world.gravity.x = 0;
+  world.gravity.y = -0.1;
 
   const mainContainer = $('main')
   const windowHeight = mainContainer.height()
   const windowWidth = mainContainer.width()
 
-  console.log(windowHeight)
+  const dummyInstance = $('<img class="bubble"></img>')
+  bubbleContainer.append(dummyInstance)
+  const bubbleWidth = parseFloat(dummyInstance.css('width'))
+  const bubbleMargin = parseFloat(dummyInstance.css('margin'))
+  bubbleContainer.remove(dummyInstance)
+  const circleRadius = bubbleWidth/2 + bubbleMargin
 
-  function attractGroup(group) {
-    return {
-      isStatic: true,
+  // creating boundaries
+  const upperBoundary = Bodies.rectangle(
+    windowWidth/2, -circleRadius,
+    windowWidth + 2 * circleRadius, 10,
+    {
+      isStatic: true
+    }
+  )
+  World.add(world, upperBoundary)
 
-      plugin: {
-        attractors: [
-          (attractor, attractee) => {
-            const factor = group === attractee.attractionGroup ?
-              1e-5 : 0
-            return {
-              x: (attractor.position.x - attractee.position.x) * factor,
-              y: (attractor.position.y - attractee.position.y) * factor,
-            }
-          }
-        ]
+  const boundaryHeight = fillHeight * 1.5
+
+  const leftBoundary = Bodies.rectangle(
+    -circleRadius, boundaryHeight/2,
+    10, boundaryHeight,
+    {
+      isStatic: true
+    }
+  )
+  World.add(world, leftBoundary)
+
+  const rightBoundary = Bodies.rectangle(
+    windowWidth + circleRadius, boundaryHeight/2,
+    10, boundaryHeight,
+    {
+      isStatic: true
+    }
+  )
+  World.add(world, rightBoundary)
+
+  // create content placeholders
+  for (const page of $('.page')) {
+    const yOffset = page.offsetTop + page.offsetHeight/2
+    console.log(yOffset)
+    const element = Bodies.rectangle(
+      windowWidth/2, yOffset,
+      100, 100,
+      {
+        isStatic: true
       }
-    }
-  }
-
-  const attractor1 = Bodies.circle(
-    0.3 * windowWidth,
-    0.2 * windowHeight,
-    5,
-    attractGroup(1)
     )
-  World.add(world, attractor1)
-
-  const attractor2 = Bodies.circle(
-    0.7 * windowWidth,
-    0.4 * windowHeight,
-    5,
-    attractGroup(2)
-    )
-  World.add(world, attractor2)
-
-  const attractor3 = Bodies.circle(
-    0.4 * windowWidth,
-    1.3 * windowHeight,
-    5,
-    attractGroup(3)
-    )
-  World.add(world, attractor3)
-
-  const collisionBodyOptions = {
-    isStatic: true,
-    render: {
-      fillStyle: '#ff0a'
-    }
+    World.add(world, element)
   }
 
-  function pageBodyOffset(index) {
-    const realOffset = (index + 1) * windowHeight/2
-    const stretchedOffset = realOffset * parallexFactor + windowHeight/2
-    return stretchedOffset
+  // calculate number of bubbles bubbles
+  // https://math.stackexchange.com/questions/2548513/maximum-number-of-circle-packing-into-a-rectangle
+  const areaToFill = (windowWidth + 2*circleRadius) * (fillHeight + circleRadius)
+  const fillableArea = (areaToFill * Math.PI) / (2 * Math.sqrt(3))
+  const bubbleArea = circleRadius * circleRadius * Math.PI
+  const numberOfBubbles = Math.floor(fillableArea / bubbleArea)
+
+  const bubbles = []
+  
+  for (let i = 0; i < numberOfBubbles; i++) {
+    const bubble = new Circle(bubbleContainer,
+      Math.random() * windowWidth,
+      Math.random() * fillHeight)
+    bubbles.push(bubble)
+    World.add(world, bubble.body)
   }
 
-  const collisionBody1 = Bodies.circle(
-    0.5 * windowWidth,
-    0.5 * windowHeight * parallexFactor,
-    30, 
-    collisionBodyOptions
-  )
-  World.add(world, collisionBody1)
-
-  const collisionBody2 = Bodies.circle(
-    0.5 * windowWidth,
-    1 * windowHeight * parallexFactor,
-    30, 
-    collisionBodyOptions
-  )
-  World.add(world, collisionBody2)
-
-  const bubbles = bubbleContainer.children('.bubble')
-    .toArray()
-    .map(Circle.fromDOMNode)
-
-  for (const bubble of bubbles) {
-    //World.add(world, bubble.body)
-  }
-
-  const solid = Bodies.rectangle(
-    windowWidth * 0.5,
-    0,
-    50,
-    50,
-    {
-      isStatic: true,
-      fillStyle: 'red'
-    }
-  )
-  World.add(world, solid)
-
-  World.add(world, Bodies.rectangle(
-    windowWidth * 0.5,
-    windowHeight * 2,
-    50,
-    50,
-    {
-      isStatic: true,
-      fillStyle: 'red'
-    }
-  ))
-
-  World.add(world, Bodies.rectangle(
-    windowWidth * 0.5,
-    windowHeight * 4,
-    50,
-    50,
-    {
-      isStatic: true,
-      fillStyle: 'red'
-    }
-  ))
-
+  //await jumpForwardInSimulation(engine, 5)
+  
   var render = Render.create({
     element: bubbleContainer.get(0),
     engine: engine,
@@ -245,57 +166,75 @@ async function setupBubbles(bubbleContainer, scrollContainer) {
 
   // create runner
   var runner = Runner.create();
-
-  let lastBar
-  function foo(baroo) {
-    if (lastBar != baroo) {
-      lastBar = baroo
-      console.log(lastBar)
-      return
-    }
-  }
   
   Runner.run(runner, engine);
   Render.run(render);
 
 
-  //scrollContainer.scroll(() => console.log(scrollContainer.scrollTop()))
   
+  //scrollContainer.scroll(() => console.log(scrollContainer.scrollTop()))
 
   requestAnimationFrame(function renderCb() {
     const scrollOffset = scrollContainer[0].scrollTop * parallexFactor  
-    foo(scrollOffset)
     Render.lookAt(render, {
       min: { x: 0, y: scrollOffset },
       max: { x: windowWidth, y: windowHeight + scrollOffset }
   })
     requestAnimationFrame(renderCb)
   })
-  return
 
+  return
   let oldTime
+  let lastDelta = 10
   requestAnimationFrame(function render(time) {
     if (oldTime) {
       // limit delta to maximal 100ms
       // otherwise the circles go crazy after having the browser window inactive for too long
       const delta = Math.min(time - oldTime, 100)
-      Engine.update(engine, delta)
+      const correction = delta/lastDelta
+      Engine.update(engine, delta, correction)
+      lastDelta = delta
     }
     oldTime = time
 
     requestAnimationFrame(render)
 
+    const height = $('.bubble').height()
+    const width = $('.bubble').width()
+    const scrollOffset = scrollContainer[0].scrollTop * parallexFactor
+
     for (const bubble of bubbles) {
       const position = bubble.body.position
       const domElement = bubble.element
 
-      const yOffset = position.y - domElement.height()/2
-      const xOffset = position.x - domElement.width()/2
-      const scrollOffset = scrollContainer[0].scrollTop * parallexFactor
+      const yOffset = position.y - height/2
+      const xOffset = position.x - width/2
 
       domElement.css('transform', `translate3d(${xOffset}px, ${yOffset - scrollOffset}px, 0)`)
     }
   })
+}
+
+class Circle {
+  constructor(parent, x, y) {
+    const face = Math.floor(Math.random()*10 + 1)
+    const facePath = `/assets/images/landing_page/faces/${face}.jpg`
+
+    const element = $(`<img class="bubble" src="${facePath}"></img>`)
+    parent.append(element)
+
+    const elementWidth = parseFloat(element.css('width'))
+    const elementMargin = parseFloat(element.css('margin'))
+    const bodyRadius = elementWidth/2 + elementMargin
+    
+    const body = Bodies.circle(
+      x, y,
+      bodyRadius
+    )
+
+    this.element = element
+    this.body = body
+  }
 }
 
 $(() => {

@@ -94,12 +94,13 @@
     overflow: hidden;
 
     .bubble {
-      width: 7rem;
-      height: 7rem;
+      width: 10rem;
+      height: 10rem;
 
       border-radius: 50%;
       margin: $extra-small-spacing/2;
 
+      will-change: transform;
       position: absolute;
     }
   }
