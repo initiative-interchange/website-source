@@ -1,6 +1,7 @@
 install:
+  - gem install bundler
   - bundle install --path vendor/bundle
-  - npm ci
+  - npm i
 
 script: npm run build
 
@@ -9,7 +10,9 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
+  repo: initiative-interchange/initiative-interchange.github.io
   local_dir: _site
   on:
     branch: master
+  target_branch: master
 
