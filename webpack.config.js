@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.join(assetFolder, 'js')
   },
-  mode: 'development',
+  mode: 'production',
   optimization: {
     usedExports: true,
     splitChunks: {
