@@ -241,6 +241,7 @@ $(() => {
   const mainContainer = $('main')
   setupScrollAnimation(mainContainer)
 
-  const bubbleContainer = $('.bubble-container')
-  setupBubbles(bubbleContainer, mainContainer)
+  // no bubbles for now
+  //const bubbleContainer = $('.bubble-container')
+  //setupBubbles(bubbleContainer, mainContainer)
 })
