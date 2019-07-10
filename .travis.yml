@@ -14,4 +14,5 @@ deploy:
   local_dir: _site
   on:
     branch: master
+  target_branch: master
 
