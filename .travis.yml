@@ -1,6 +1,6 @@
 install:
-  - bundle install --path vendor/bundle
   - gem install bundler
+  - bundle install --path vendor/bundle
   - npm ci
 
 script: npm run build
