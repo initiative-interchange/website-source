@@ -42,7 +42,7 @@
     .circle {
       width: 7rem;
       height: 7rem;
-      transition: width .4s ease-in-out, height .4s ease-in-out;
+      transition: width .4s ease-in-out .4s, height .4s ease-in-out .4s;
 
       border-radius: 50%;
       margin: $extra-small-spacing/2;
@@ -84,9 +84,12 @@
         width: 17.2rem;
         height: 17.2rem;
 
+        transition: width .4s ease-in-out, height .4s ease-in-out;
+
         figcaption {
           pointer-events: all;
           opacity: 1;
+          transition: opacity .4s ease-in-out .4s;
         }
       }
     }
