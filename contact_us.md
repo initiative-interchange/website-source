@@ -9,7 +9,7 @@ title: Initiative Interchange
 # contact us
 
 {:class="email"}
-<a href="mailto:">write us an email</a>
+<a href="mailto:contact@initiative-interchange.org">write us an email</a>
 
 # our board members
 
