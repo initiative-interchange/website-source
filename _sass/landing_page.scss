@@ -24,7 +24,7 @@ main {
 
     scroll-snap-align: center;
 
-    * {
+    > * {
       width: 70%;
     }
 
@@ -62,8 +62,9 @@ main {
       }
     }
 
-    .video-player {
+    .video-player-wrapper {
       width: 100vw;
+      height: 100%;
       // arbitrarily set
       max-width: 600px;
     }

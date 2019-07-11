@@ -2,17 +2,14 @@ import $ from 'jquery';
 import anime from 'animejs';
 import PolyDecomp from 'poly-decomp';
 window.decomp = PolyDecomp;
-
+import Plyr from 'plyr';
 import {
   Engine,
   Bodies,
   World,
   Render,
-  Runner,
-  use
+  Runner
 } from 'matter-js';
-
-//use(MatterAttractors)
 
 function setupScrollAnimation(outerElement) {
 
@@ -235,6 +232,10 @@ class Circle {
   }
 }
 
+function setupYoutubeVideo(element) {
+  new Plyr(element)
+}
+
 $(() => {
   const mainContainer = $('main');
   setupScrollAnimation(mainContainer);
@@ -242,4 +243,6 @@ $(() => {
   // no bubbles for now
   //const bubbleContainer = $('.bubble-container')
   //setupBubbles(bubbleContainer, mainContainer)
+
+  setupYoutubeVideo('.video-player');
 });
