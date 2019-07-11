@@ -4,11 +4,9 @@ import {
   Engine,
   Body,
   Bodies,
-  World,
-  Render
+  World
 } from 'matter-js';
 import MatterAttractors from 'matter-attractors';
-import { jumpForwardInSimulation } from './lib/physics';
 
 // use matterjs plugin
 use(MatterAttractors);
