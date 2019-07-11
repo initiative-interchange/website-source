@@ -4,7 +4,8 @@ import {
   Engine,
   Body,
   Bodies,
-  World
+  World,
+  Render
 } from 'matter-js';
 import MatterAttractors from 'matter-attractors';
 import { jumpForwardInSimulation } from './lib/physics';
@@ -25,6 +26,7 @@ function setup(wrapperElement) {
   const wallWidth = 100;
 
   let attractiveBody;
+  let upperWall;
   let bottomWall;
   let circles;
 
@@ -54,7 +56,8 @@ function setup(wrapperElement) {
     for (const circle of circles) {
       World.remove(engine.world, circle.body);
     }
-    // remove the bottom wall from the simulation
+    // remove all walls from the simulation
+    World.remove(engine.world, upperWall)
     World.remove(engine.world, bottomWall)
 
     // remove attrive body in the center from simulation
@@ -122,6 +125,16 @@ function setup(wrapperElement) {
         }
       });
     World.add(engine.world, attractiveBody);
+
+    // body at the top, keeping the bubbles from covering whatever is above
+    upperWall = Bodies.rectangle(
+      wrapperElement.width()/2, -wallWidth/2,
+      wrapperElement.width(), wallWidth,
+      {
+        isStatic: true
+      }
+    );
+    World.add(engine.world, upperWall);
 
     // body at the bottom, keeping the bubbles from covering the heading
     bottomWall = Bodies.rectangle(
