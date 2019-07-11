@@ -9,7 +9,7 @@ title: Initiative Interchange
 # contact us
 
 {:class="email"}
-<a href="#">write us an email</a>
+<a href="mailto:">write us an email</a>
 
 # our board members
 
@@ -30,4 +30,3 @@ title: Initiative Interchange
 </div>
 
 ## PHILANTHROPY RESORT
-

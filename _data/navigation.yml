@@ -30,3 +30,6 @@
 
 - name: contact us
   link: /contact_us.html
+  groups:
+    - name: legal notice
+      link: /legal.html
