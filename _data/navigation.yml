@@ -29,7 +29,7 @@
 #  link: /blank
 
 - name: contact us
-  link: /contact_us
+  link: /contact-us
   groups:
     - name: legal notice
       link: /legal
