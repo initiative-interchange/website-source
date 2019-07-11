@@ -16,6 +16,6 @@ deploy:
   repo: initiative-interchange/initiative-interchange.github.io
   local_dir: _site
   on:
-    branch: master
+    branch: publish
   target_branch: master
 

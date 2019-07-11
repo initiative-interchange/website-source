@@ -3,3 +3,12 @@
 @import 'landing_page.scss';
 @import 'info_page.scss';
 @import 'contact_us.scss';
+
+* {
+    overflow:hidden;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
