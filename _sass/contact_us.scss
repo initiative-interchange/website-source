@@ -21,6 +21,11 @@
     @include light-text();
     @include large-spacing();
 
+    a {
+      @include light-text();
+      text-decoration: none;
+    }
+    
     &::after {
       content: ">";
       margin-left: $small-spacing;
