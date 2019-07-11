@@ -21,6 +21,11 @@
     @include light-text();
     @include large-spacing();
 
+    a {
+      @include light-text();
+      text-decoration: none;
+    }
+    
     &::after {
       content: ">";
       margin-left: $small-spacing;
@@ -33,7 +38,8 @@
   }
 
   #interaction-circles,
-  #administration-circles {
+  #administration-circles,
+  #philantropy-circles {
     height: 30rem;
     width: 100%;
     @include small-spacing();

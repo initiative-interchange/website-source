@@ -9,7 +9,7 @@ title: Initiative Interchange
 # contact us
 
 {:class="email"}
-what's your email address?
+<a href="mailto:">write us an email</a>
 
 # our board members
 
@@ -24,3 +24,9 @@ what's your email address?
 </div>
 
 ## ADMINISTRATION RESORT
+
+<div id="philantropy-circles">
+{% include circles.html ressort='philantropy' %}
+</div>
+
+## PHILANTHROPY RESORT

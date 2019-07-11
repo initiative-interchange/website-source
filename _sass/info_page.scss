@@ -23,7 +23,16 @@
   }
 
   .prominent-image {
-    width: 100%;
+    width: 100vw;
+    // arbitrarily set
+    max-width: 700px;
+    max-height: 400px;
+  }
+
+  .video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero {

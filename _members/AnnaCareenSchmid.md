@@ -1,9 +1,10 @@
 ---
 name: Anna Careen Schmid
 occupation: Student | Law | Juridicum Vienna
-ressort: interaction
+ressort:
+  - administration
 roles:
   - Founding Member
   - Head of the Administration Ressort
-face: '1.png'
+face: 'Anna Careen Schmid.png'
 ---

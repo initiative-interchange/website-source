@@ -11,7 +11,7 @@ title: Interactors
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla scelerisque orci, vel malesuada mi cursus ut. Vivamus nec cursus nisi, vel lacinia magna. Praesent in suscipit nibh, nec scelerisque tortor. Curabitur ex metus, finibus sit amet tincidunt at, tempor quis massa.
 
-<div class="normal-spacing full-width">
+<div class="normal-spacing full-width video">
   <img src="assets/images/landing_page/video.svg" class="prominent-image" />
 </div>
 
