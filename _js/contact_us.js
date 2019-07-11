@@ -21,6 +21,16 @@ $(() => {
 function setup(wrapperElement) {
   const engine = createEngine(wrapperElement)
 
+  const wallWidth = 100
+  const bottomWall = Bodies.rectangle(
+    wrapperElement.width()/2, wrapperElement.height() + wallWidth/2,
+    wrapperElement.width(), wallWidth,
+    {
+      isStatic: true
+    }
+  )
+  World.add(engine.world, bottomWall)
+
   // create Circle instances from all '.circle' elements within the wrapper
   const circles = wrapperElement.children('.circle')
     .toArray()
@@ -28,7 +38,6 @@ function setup(wrapperElement) {
 
   // setActive is emmitted when a circle or the space between circles is clicked
   wrapperElement.on('setActive', (e, id) => {
-    console.log(e, id)
     for (const circle of circles) {
       // actives the circle with the matching id,
       // collapses all other circles
