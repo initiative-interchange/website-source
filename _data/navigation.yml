@@ -31,5 +31,7 @@
 - name: contact us
   link: /contact-us
   groups:
+    - name: credits & open source licenses
+      link: /credits
     - name: legal notice
       link: /legal
