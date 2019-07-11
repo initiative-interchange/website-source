@@ -7,7 +7,6 @@ import {
   World
 } from 'matter-js';
 import MatterAttractors from 'matter-attractors';
-import { jumpForwardInSimulation } from './lib/physics';
 
 // use matterjs plugin
 use(MatterAttractors);
@@ -20,16 +19,20 @@ $(() => {
 });
 
 function setup(wrapperElement) {
-  const engine = createEngine(wrapperElement);
+  const engine = createEngine();
 
-  // create Circle instances from all '.circle' elements within the wrapper
-  const circles = wrapperElement.children('.circle')
-    .toArray()
-    .map(Circle.fromDOMNode);
+  const wallWidth = 100;
+
+  let attractiveBody;
+  let upperWall;
+  let bottomWall;
+  let circles;
+
+  // initialize bodies with random circle locations
+  addBodies();
 
   // setActive is emmitted when a circle or the space between circles is clicked
   wrapperElement.on('setActive', (e, id) => {
-    console.log(e, id);
     for (const circle of circles) {
       // actives the circle with the matching id,
       // collapses all other circles
@@ -45,13 +48,22 @@ function setup(wrapperElement) {
     }
   });
 
-  // up to this point the physics bodies only exist in the array, but not in the engine
-  for (const circle of circles) {
-    World.add(engine.world, circle.body);
-  }
+  // handle resizes, wait for the circle resize animation to finish
+  $(window).resize(() => setTimeout(() => {
+    // remove all circle from the simulation
+    for (const circle of circles) {
+      World.remove(engine.world, circle.body);
+    }
+    // remove all walls from the simulation
+    World.remove(engine.world, upperWall)
+    World.remove(engine.world, bottomWall)
 
-  // wait 30 seconds for the circles to stabalize
-  jumpForwardInSimulation(engine, 30);
+    // remove attrive body in the center from simulation
+    World.remove(engine.world, attractiveBody)
+
+    // rebuild bodies but keep circle locations
+    addBodies(true)
+  }, 400))
 
   // first render
   requestAnimationFrame(() => {
@@ -88,37 +100,68 @@ function setup(wrapperElement) {
       }
     }
   });
+
+  function addBodies(keepCirclePositions = false) {
+    // invisible body in the center of the wrapper that keeps all the bubbles together
+    attractiveBody = Bodies.circle(
+      wrapperElement.width() / 2,
+      wrapperElement.height() / 2,
+      0,
+      {
+        isStatic: true,
+
+        plugin: {
+          attractors: [
+            (attractor, attractee) => {
+              const factor = 1e-9 * attractee.area;
+              return {
+                x: (attractor.position.x - attractee.position.x) * factor,
+                y: (attractor.position.y - attractee.position.y) * factor,
+              };
+            }
+          ]
+        }
+      });
+    World.add(engine.world, attractiveBody);
+
+    // body at the top, keeping the bubbles from covering whatever is above
+    upperWall = Bodies.rectangle(
+      wrapperElement.width()/2, -wallWidth/2,
+      wrapperElement.width(), wallWidth,
+      {
+        isStatic: true
+      }
+    );
+    World.add(engine.world, upperWall);
+
+    // body at the bottom, keeping the bubbles from covering the heading
+    bottomWall = Bodies.rectangle(
+      wrapperElement.width()/2, wrapperElement.height() + wallWidth/2,
+      wrapperElement.width(), wallWidth,
+      {
+        isStatic: true
+      }
+    );
+    World.add(engine.world, bottomWall);
+
+    // create Circle instances from all '.circle' elements within the wrapper
+    circles = wrapperElement.children('.circle')
+      .toArray()
+      .map(node => Circle.fromDOMNode(node, keepCirclePositions));
+
+    for (const circle of circles) {
+      World.add(engine.world, circle.body)
+    }
+  }
 }
 
 // creates empty engine without any bubbles
-function createEngine(wrapperElement) {
+function createEngine() {
   const engine = Engine.create();
 
   const world = engine.world;
   // disables gravity on all axes
   world.gravity.scale = 0;
-
-  // invisible body in the center of the wrapper that keeps all the bubbles together
-  const attractiveBody = Bodies.circle(
-    wrapperElement.width() / 2,
-    wrapperElement.height() / 2,
-    0,
-    {
-      isStatic: true,
-
-      plugin: {
-        attractors: [
-          (attractor, attractee) => {
-            const factor = 1e-9 * attractee.area;
-            return {
-              x: (attractor.position.x - attractee.position.x) * factor,
-              y: (attractor.position.y - attractee.position.y) * factor,
-            };
-          }
-        ]
-      }
-    });
-  World.add(world, attractiveBody);
 
   return engine;
 }
@@ -164,7 +207,7 @@ class Circle {
   }
 
   // constructs Circle object from an existing dom node
-  static fromDOMNode(domNode) {
+  static fromDOMNode(domNode, keepPosition = false) {
     const element = $(domNode);
     const parent = element.parent();
     const margin = parseFloat(element.css('margin'));
@@ -172,10 +215,26 @@ class Circle {
     // read id from dom property
     const id = element.data('id');
 
+    let x = Math.random() * parent.width();
+    let y = Math.random() * parent.height();
+
+    // parse position from transform attribute
+    if (keepPosition) {
+      const css = element.css('transform');
+      const regex = /^matrix\(1, 0, 0, 1, (?<x>\d+(?:\.\d+)), (?<y>\d+(?:\.\d+))\)$/;
+      const match = css.match(regex);
+
+      if(match) {
+        // element dimensions are calculated in because DOM and matterjs use different anchor points
+        x = parseFloat(match.groups.x) + element.width()/2;
+        y = parseFloat(match.groups.y) + element.height()/2;
+      }
+    }
+
     // create physics body
     const body = Bodies.circle(
-      Math.random() * parent.width(),
-      Math.random() * parent.height(),
+      x,
+      y,
       element.width() / 2 + margin,
       {
         plugin: {
