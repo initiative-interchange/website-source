@@ -24,3 +24,10 @@ what's your email address?
 </div>
 
 ## ADMINISTRATION RESORT
+
+<div id="philantropy-circles">
+{% include circles.html ressort='philantropy' %}
+</div>
+
+## PHILANTHROPY RESORT
+

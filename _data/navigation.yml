@@ -17,16 +17,16 @@
     - name: partners
       link: /philantropy.html#partners
 
-- name: events
-  link: /blank
-  groups:
-    - name: upcoming events
+#- name: events
+#  link: /blank
+#  groups:
+#    - name: upcoming events
       link: /blank
-    - name: past events
+#    - name: past events
       link: /blank
-
-- name: news
-  link: /blank
+#
+#- name: news
+#  link: /blank
 
 - name: contact us
   link: /contact_us.html

@@ -16,6 +16,7 @@ use(MatterAttractors)
 $(() => {
   setup($('#interaction-circles'))
   setup($('#administration-circles'))
+  setup($('#philantropy-circles'))
 })
 
 function setup(wrapperElement) {
