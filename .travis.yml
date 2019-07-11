@@ -6,7 +6,9 @@ install:
   - bundle install --path vendor/bundle
   - npm i
 
-script: npm run build
+script:
+  - npm run build
+  - echo "www.initiative-interchange.org" > _site/CNAME 
 
 deploy:
   provider: pages

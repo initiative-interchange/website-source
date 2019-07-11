@@ -2,20 +2,20 @@
   link: /
   
 - name: interactors
-  link: /interactors.html
+  link: /interactors
   groups:
     - name: why we connect young people
-      link: /interactors.html#why-we-connect-young-people
+      link: /interactors#why-we-connect-young-people
     - name: members
-      link: /interactors.html#members
+      link: /interactors#members
 
 - name: philantropy
-  link: /philantropy.html
+  link: /philantropy
   groups:
     - name: why we support education
-      link: /philantropy.html#why-we-support-education
+      link: /philantropy#why-we-support-education
     - name: partners
-      link: /philantropy.html#partners
+      link: /philantropy#partners
 
 #- name: events
 #  link: /blank
@@ -29,7 +29,7 @@
 #  link: /blank
 
 - name: contact us
-  link: /contact_us.html
+  link: /contact_us
   groups:
     - name: legal notice
-      link: /legal.html
+      link: /legal
