@@ -2,6 +2,7 @@
 layout: info_page
 scripts:
   - info_page
+  - interactors_page
 hero: assets/images/interactors/hero.png
 heading: interactors
 title: Interactors
@@ -12,7 +13,16 @@ title: Interactors
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla scelerisque orci, vel malesuada mi cursus ut. Vivamus nec cursus nisi, vel lacinia magna. Praesent in suscipit nibh, nec scelerisque tortor. Curabitur ex metus, finibus sit amet tincidunt at, tempor quis massa.
 
 <div class="normal-spacing full-width video">
-  <img src="assets/images/landing_page/video.svg" class="prominent-image" />
+  <div class="prominent-image">
+    <div class="plyr__video-embed video-player">
+      <iframe
+          src="https://www.youtube.com/embed/LJDmjJTcR68?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+          allowfullscreen
+          allowtransparency
+          allow="autoplay"
+      ></iframe>
+    </div>
+  </div>
 </div>
 
 <div class="column-layout normal-spacing">
