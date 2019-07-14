@@ -7,31 +7,58 @@ scripts:
 ---
 
 
-<img class="logo small-spacing" src="assets/images/logo.svg"/>
+<img class="logo small-spacing" src="assets/images/logo.svg" />
 
-<h1 class="grey-header-text text-center large-spacing">join us to 
+<h1 class="grey-header-text text-center large-spacing">join us to
   change the world.</h1>
 
-<form>
-<input id="club" name="club" class="normal-spacing" type="text" placeholder="interact club">
-<input id="country" name="country" class="small-spacing" type="text" placeholder="country">
-<input id="club-email" name="clubEmail" class="small-spacing" type="email" placeholder="e-mail address (of your club)">
-<textarea id="club-description" name="clubDescription" class="small-spacing" rows="4" cols="50" placeholder="club presentation (describe what makes your club special in three sentences)"></textarea>
+<form id="join_form">
+  <div class="input-box normal-spacing">
+    <input id="club" name="club" type="text" placeholder="interact club">
+    <div class="error-message"></div>
+  </div>
+  <div class="input-box small-spacing">
+    <input id="country" name="country" type="text" placeholder="country">
+    <div class="error-message"></div>
+  </div>
+  <div class="input-box small-spacing">
+    <input id="club_mail" name="club_mail" type="email" placeholder="e-mail address (of your club)">
+    <div class="error-message"></div>
+  </div>
+  <div class="input-box small-spacing">
+    <textarea id="club_presentation" name="club_presentation" rows="4" cols="50"
+      placeholder="club presentation (describe what makes your club special in three sentences)"></textarea>
+    <div class="error-message"></div>
+  </div>
 
-<input id="name" name="name" class="normal-spacing" type="text" placeholder="name of a contact person">
-<input id="email" name="email" class="small-spacing" type="email" placeholder="e-mail address of the contact person">
-<input id="phone" name="phone" class="small-spacing" type="tel" placeholder="mobile phone number of the contact person">
+  <div class="input-box normal-spacing">
+    <input id="contact_person_name" name="contact_person_name" type="text" placeholder="name of a contact person">
+    <div class="error-message"></div>
+  </div>
+  <div class="input-box small-spacing">
+    <input id="contact_person_mail" name="contact_person_mail" type="email"
+      placeholder="e-mail address of the contact person">
+    <div class="error-message"></div>
+  </div>
+  <div class="input-box small-spacing">
+    <input id="contact_person_number" name="contact_person_number" type="tel"
+      placeholder="mobile phone number of the contact person">
+    <div class="error-message"></div>
+  </div>
 
-<input id="whatsapp" name="whatsapp" class="normal-spacing" type="checkbox">
-<label class="extra-small-spacing" for="whatsapp">I allow Initiative Interchange to add my mobile number to a Whatsapp Group Chat with contact persons from other clubs</label>
+  <input id="whatsapp" name="whatsapp" class="normal-spacing" type="checkbox">
+  <label class="extra-small-spacing" for="whatsapp">I allow Initiative Interchange to add my mobile number to a Whatsapp
+    Group Chat with contact persons from other clubs</label>
 
 
-<input id="commitment-agreement" name="commitmentAgreement" class="small-spacing" type="checkbox">
-<label class="extra-small-spacing" for="commitment-agreement">I have read and agree to the commitment agreement available here</label>
+  <input id="commitment-agreement" name="commitmentAgreement" class="small-spacing" type="checkbox">
+  <label class="extra-small-spacing" for="commitment-agreement">I have read and agree to the commitment agreement
+    available here</label>
 
-<input id="data" name="data" class="normal-spacing" type="checkbox">
-<label class="extra-small-spacing" for="data">I allow Initiative Interchange to store the data I have given here.</label>
+  <input id="data" name="data" class="normal-spacing" type="checkbox">
+  <label class="extra-small-spacing" for="data">I allow Initiative Interchange to store the data I have given
+    here.</label>
 
-<input class="normal-spacing" type="submit" value="SUBMIT">
+  <input class="normal-spacing" type="submit" value="SUBMIT">
 </form>
 <div class="normal-spacing"></div>

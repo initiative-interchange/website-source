@@ -21,28 +21,46 @@
     flex-direction: column;
     align-items: center;
 
-    input {
-      text-align: center;
+    .input-box {
       width: 70%;
-      @include text();
-      background: transparent;
-      border: none;
-      outline: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      &::placeholder {
-        @include text();
+      &.error {
+        padding: $extra-small-spacing;
+        border: $error-red 0.15rem solid;
       }
-    }
 
-    textarea {
-      width: 70%;
-      background: transparent;
-      border: none;
-      outline: none;
-      @include text();
-      &::placeholder {
+      input {
         text-align: center;
+        width: 70%;
         @include text();
+        background: transparent;
+        border: none;
+        outline: none;
+
+        &::placeholder {
+          @include text();
+        }
+      }
+
+      textarea {
+        width: 70%;
+        background: transparent;
+        border: none;
+        outline: none;
+        @include text();
+        &::placeholder {
+          text-align: center;
+          @include text();
+        }
+      }
+
+      .error-message {
+        @include text();
+        color: $error-red;
+        text-align: center;
       }
     }
 
