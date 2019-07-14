@@ -174,7 +174,6 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
     requestAnimationFrame(renderCb);
   });
 
-  return;
   /* let oldTime;
   let lastDelta = 10;
   requestAnimationFrame(function render (time) {
