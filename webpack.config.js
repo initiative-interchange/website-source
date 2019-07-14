@@ -9,7 +9,7 @@ module.exports = {
     nav: path.join(sourceFolder, 'nav'),
     info_page: path.join(sourceFolder, 'info_page'),
     contact_us: path.join(sourceFolder, 'contact_us'),
-    interactors_page: path.join(sourceFolder, 'interactors_page')
+    join_us: path.join(sourceFolder, 'join_us')
   },
   output: {
     path: path.join(assetFolder, 'js')

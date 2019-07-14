@@ -2,7 +2,6 @@
 layout: info_page
 scripts:
   - info_page
-  - interactors_page
 hero: assets/images/interactors/hero.png
 heading: interactors
 title: Interactors
