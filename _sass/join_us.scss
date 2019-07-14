@@ -82,5 +82,17 @@
       letter-spacing: 2.1px;
       border: $black 0.15rem solid;
     }
+
+    #response-message {
+      @include text();
+
+      &.error {
+        color: $error-red;
+      }
+
+      &.success {
+        color: $interchange-green;
+      }
+    }
   }
 }
