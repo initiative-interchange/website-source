@@ -64,7 +64,7 @@ html {
 
 @mixin small-green-header {
   @include green-header-text();
-  font-size: 250%;
+  font-size: 200%;
 }
 
 .small-green-header {
@@ -102,6 +102,11 @@ html {
 
 .text {
   @include text();
+}
+
+.text-slightly-smaller {
+  @include text();
+  font-size: 0.7rem;
 }
 
 @mixin medium-text {
