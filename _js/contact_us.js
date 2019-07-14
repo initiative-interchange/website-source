@@ -1,44 +1,44 @@
-import $ from 'jquery'
+import $ from 'jquery';
 import {
   use,
   Engine,
   Body,
   Bodies,
   World
-} from 'matter-js'
-import MatterAttractors from 'matter-attractors'
+} from 'matter-js';
+import MatterAttractors from 'matter-attractors';
 
 // use matterjs plugin
-use(MatterAttractors)
+use(MatterAttractors);
 
 // when the document is ready...
 $(() => {
-  setup($('#interaction-circles'))
-  setup($('#administration-circles'))
-  setup($('#philantropy-circles'))
-})
+  setup($('#interaction-circles'));
+  setup($('#administration-circles'));
+  setup($('#philantropy-circles'));
+});
 
 function setup (wrapperElement) {
-  const engine = createEngine()
+  const engine = createEngine();
 
-  const wallWidth = 100
+  const wallWidth = 100;
 
-  let attractiveBody
-  let upperWall
-  let bottomWall
-  let circles
+  let attractiveBody;
+  let upperWall;
+  let bottomWall;
+  let circles;
 
   // initialize bodies with random circle locations
-  addBodies()
+  addBodies();
 
   // setActive is emmitted when a circle or the space between circles is clicked
   wrapperElement.on('setActive', (e, id) => {
     for (const circle of circles) {
       // actives the circle with the matching id,
       // collapses all other circles
-      circle.setActive(circle.id === id)
+      circle.setActive(circle.id === id);
     }
-  })
+  });
 
   // when the space between circles is clicked
   wrapperElement.click(e => {
