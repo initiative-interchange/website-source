@@ -1,8 +1,8 @@
-import $ from 'jquery'
-import { toggle, close } from './lib/nav'
+import $ from 'jquery';
+import { toggle, close } from './lib/nav';
 
 $(() => {
-  $('.nav-button').click(toggle)
+  $('.nav-button').click(toggle);
 
-  $('nav a').click(close)
-})
+  $('nav a').click(close);
+});
