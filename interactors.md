@@ -12,17 +12,9 @@ title: Interactors
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla scelerisque orci, vel malesuada mi cursus ut. Vivamus nec cursus nisi, vel lacinia magna. Praesent in suscipit nibh, nec scelerisque tortor. Curabitur ex metus, finibus sit amet tincidunt at, tempor quis massa.
 
+
 <div class="normal-spacing full-width video">
-  <div class="prominent-image">
-    <div class="plyr__video-embed video-player">
-      <iframe
-          src="https://www.youtube.com/embed/LJDmjJTcR68?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-          allowfullscreen
-          allowtransparency
-          allow="autoplay"
-      ></iframe>
-    </div>
-  </div>
+  <img src="assets/images/interactors/world.svg" class="prominent-image" />
 </div>
 
 <div class="column-layout normal-spacing">
