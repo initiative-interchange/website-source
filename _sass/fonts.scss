@@ -95,8 +95,8 @@ html {
 @mixin text($font-family: 'Avenir Next Regular') {
   color: $dark-grey;
   font-family: $font-family;
-  font-size: 1rem;
-  line-height: 110%;
+  font-size: 1.4rem;
+  line-height: 155%;
   text-decoration: none;
 }
 
