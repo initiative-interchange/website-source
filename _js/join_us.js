@@ -99,17 +99,23 @@ $(() => {
     }
 
     const result = formSchema.validate(values);
-    if (result.error) return;
+    if (result.error) {
+      responseField.removeClass('success');
+      responseField.addClass('error');
+      responseField.html('All fields must be correctly filled in.');
+      return;
+    };
 
     const data = result.value;
 
     try {
-      const response = await $.post(
-        'https://t5o4h93c1c.execute-api.eu-central-1.amazonaws.com/default/i2-sendgrid',
+      const url = 'https://t5o4h93c1c.execute-api.eu-central-1.amazonaws.com/default/i2-sendgrid';
+      const response = await fetch(url,
         {
-          data: JSON.stringify(data)
-        }
-      );
+          body: JSON.stringify(data),
+          method: 'POST',
+          mode: 'no-cors'
+        });
 
       responseField.removeClass('error');
       responseField.addClass('success');
