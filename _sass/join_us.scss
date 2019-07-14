@@ -27,6 +27,7 @@
       @include text();
       background: transparent;
       border: none;
+      outline: none;
 
       &::placeholder {
         @include text();
@@ -37,6 +38,8 @@
       width: 70%;
       background: transparent;
       border: none;
+      outline: none;
+      @include text();
       &::placeholder {
         text-align: center;
         @include text();
