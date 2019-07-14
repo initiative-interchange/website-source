@@ -10,8 +10,9 @@ title: Interactors
 
 ## why we connect young people
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla scelerisque orci, vel malesuada mi cursus ut. Vivamus nec cursus nisi, vel lacinia magna. Praesent in suscipit nibh, nec scelerisque tortor. Curabitur ex metus, finibus sit amet tincidunt at, tempor quis massa.
+When we reach out to young people from all around the world, it is our goal to give our future a compelling face. We want to paint the picture of a new world in which every child has access to education; a world in which every child can take their fate in their own hands and can tackle both personal and world-scale challenges by their own efforts. 
 
+Nobody understands the urgency of this challenge as well as young people. Many of us want to give everyone the chances we had, but individual efforts are often inefficient because they are uncoordinated. Interchange connects young people because we want to channel the energy and talent to make this future world reality. We believe that the whole is more than the sum of its parts – we want to create the whole.
 
 <div class="normal-spacing full-width video">
   <img src="assets/images/interactors/world.svg" class="prominent-image" />
@@ -25,7 +26,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla scel
 {% endfor %}
 </div>
 
-Aliquam malesuada metus ac massa porttitor tincidunt. Sed lectus odio, tincidunt in diam id, luctus semper dolor. Etiam ultricies risus vitae turpis viverra, vitae tincidunt tellus convallis. Aliquam id semper nunc. Nulla vel ultrices risus. Quisque finibus odio velit, et elementum quam euismod id. Quisque ac venenatis massa. Nulla suscipit, eros id elementum mollis, nibh tortor hendrerit turpis, ac dictum lorem est non lectus.
+Interchange is a platform that helps Interactors (young members of the international charity organization Rotary) from all around the world to connect with one another. Technology blurs the lines between countries and continents and we want to close the gap between people. Interact has over 500,000 members around the world and the potential that could be gained is unparalleled. Rotary embodies this kind of connection, we want to extend this spirit to young people. We want to develop friendships. We want to encourage personal and intellectual exchange. We want to create a strong network of people who construct the future we painted.
+
+## how we connect young people
+
+We are in contact via social media as well as personal meetings. To facilitate the formation of friendships, we organize regular events and conferences in several countries (see [Events](/#) for an overview of past and upcoming events). Every Interact Club is welcome to join by simply submitting the form on our [Join us](/#) page. You will receive all information needed to connect with other Interactors and to change the world with them for the better.
 
 ## members
 
