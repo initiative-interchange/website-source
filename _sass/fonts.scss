@@ -46,12 +46,16 @@ html {
   @include text-center();
 }
 
-@mixin green-header-text {
-  color: $interchange-green;
+@mixin header-text {
   font-family: 'Avenir Next Ultra Light';
   font-size: 3.1rem;
   line-height: 3.7rem;
   text-decoration: none;
+}
+
+@mixin green-header-text {
+  color: $interchange-green;
+  @include header-text()
 }
 
 .green-header-text {
@@ -77,6 +81,15 @@ html {
 
 .white-header-text {
   @include white-header-text();
+}
+
+@mixin grey-header-text {
+  @include header-text();
+
+}
+
+.grey-header-text {
+  @include grey-header-text();
 }
 
 @mixin text($font-family: 'Avenir Next Regular') {

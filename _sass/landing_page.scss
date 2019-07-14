@@ -88,10 +88,12 @@ main {
       flex-direction: row;
       justify-content: space-between;
 
-      button {
+      a {
         width: calc((100% - #{$normal-spacing}) / 2);
-
+        text-align: center;
+        line-height: 250%;
         background: transparent;
+        text-decoration: none;
         color: $interchange-green;
         font-family: 'Avenir Next Bold';
         border: $interchange-green .15rem solid;
