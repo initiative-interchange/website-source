@@ -1,5 +1,10 @@
 - name: home
   link: /
+  groups:
+    - name: donate
+      link: /#
+    - name: join us now
+      link: /#
   
 - name: interactors
   link: /interactors
@@ -17,16 +22,16 @@
     - name: partners
       link: /philantropy#partners
 
-#- name: events
-#  link: /blank
-#  groups:
-#    - name: upcoming events
-#      link: /blank
-#    - name: past events
-#      link: /blank
-#
-#- name: news
-#  link: /blank
+- name: events
+  link: /blank
+  groups:
+    - name: upcoming events
+      link: /#
+    - name: past events
+      link: /#
+
+- name: news
+  link: /#
 
 - name: contact us
   link: /contact-us
