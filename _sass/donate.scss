@@ -1,0 +1,38 @@
+.content.donate {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.65)
+  ), url('../images/donate/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img.logo {
+    width: 50%;
+  }
+
+  p {
+    width: 70%;
+
+    a:link, a:visited {
+      @include white-text();
+      text-decoration: underline;
+    }
+    a:hover, a:active {
+      @include white-text();
+      text-decoration: underline;
+    }
+  }
+
+  .payment-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include white-text();
+  }
+}

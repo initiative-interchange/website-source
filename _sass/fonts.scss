@@ -104,6 +104,15 @@ html {
   @include text();
 }
 
+@mixin white-text() {
+  @include text();
+  color: $white;
+}
+
+.white-text {
+  @include white-text();
+}
+
 .text-slightly-smaller {
   @include text();
   font-size: 0.7rem;
