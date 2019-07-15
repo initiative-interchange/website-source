@@ -2,72 +2,102 @@ import $ from 'jquery';
 import anime from 'animejs';
 import PolyDecomp from 'poly-decomp';
 import Plyr from 'plyr';
-import {
-  Engine,
-  Bodies,
-  World,
-  Render,
-  Runner
-} from 'matter-js';
+import { Engine, Bodies, World, Render, Runner } from 'matter-js';
 window.decomp = PolyDecomp;
 
+// when the document is loaded...
+$(() => {
+  const mainContainer = $('main');
+  setupScrollAnimation(mainContainer);
+
+  // no bubbles for now
+  // const bubbleContainer = $('.bubble-container')
+  // setupBubbles(bubbleContainer, mainContainer)
+
+  setupYoutubeVideo('.video-player');
+});
+
 function setupScrollAnimation (outerElement) {
-  let cleanUpAnimation;
+  // recreate the animation every time the document changes its size
+  document.body.onresize = () => {
+    if (typeof cleanUpAnimation === 'function') {
+      cleanUpAnimation();
+    }
+    cleanUpAnimation = createScrollAnimation();
+  };
+  let cleanUpAnimation = createScrollAnimation();
+
+  // show the pages
+  $('.page').removeClass('hidden');
 
   function createScrollAnimation () {
-    $('.page').removeClass('hidden');
     const firstPage = $('.page').first();
-    $('.top-page-spacer').css('height', (outerElement.height() - firstPage.height()) / 2);
+
+    // adapt the height of the top spacer
+    $('.top-page-spacer').css(
+      'height',
+      (outerElement.height() - firstPage.height()) / 2
+    );
 
     const halfPage = outerElement.height() / 2;
 
+    // the main timeline for the animation
     const timeline = anime.timeline({
       duration: outerElement.height(),
       autoplay: false
     });
 
+    // add all the fade-in animations
     for (const el of $('.fade-in')) {
-      timeline.add({
-        targets: el,
-        opacity: [0, 1],
-        duration: el.clientHeight,
-        easing: 'easeInQuint'
-      }, el.offsetTop - el.clientHeight / 2);
+      timeline.add(
+        {
+          targets: el,
+          opacity: [0, 1],
+          duration: el.clientHeight,
+          easing: 'easeInQuint'
+        },
+        el.offsetTop - el.clientHeight / 2
+      );
     }
 
+    // add all the fade-out animations
     for (const el of $('.fade-out')) {
-      timeline.add({
-        targets: el,
-        opacity: [1, 0],
-        duration: el.clientHeight,
-        easing: 'easeOutQuad'
-      }, el.offsetTop + el.clientHeight / 2);
+      timeline.add(
+        {
+          targets: el,
+          opacity: [1, 0],
+          duration: el.clientHeight,
+          easing: 'easeOutQuad'
+        },
+        el.offsetTop + el.clientHeight / 2
+      );
     }
 
+    // update the animation on every scroll
+    outerElement.scroll(updateAnimation);
+    // and update it now for the current scroll
+    updateAnimation();
+
+    // clean up routine
+    return () => outerElement.off('scroll', updateAnimation);
+
+    // adjust animation progress to the current scroll position
     function updateAnimation () {
       const progress = Math.max(0, outerElement.scrollTop()) + halfPage;
       timeline.seek(progress);
     }
-
-    if (typeof (cleanUpAnimation) === 'function') {
-      cleanUpAnimation();
-    }
-    outerElement.scroll(updateAnimation);
-    cleanUpAnimation = () => outerElement.off('scroll', updateAnimation);
-
-    updateAnimation();
   }
-
-  document.body.onresize = createScrollAnimation;
-  createScrollAnimation();
 }
 
 async function setupBubbles (bubbleContainer, scrollContainer) {
+  // parallex scroll factor
   const parallexFactor = 2;
+  // the fill height of the bubbles
   const fillHeight = 1000;
 
   const engine = Engine.create();
 
+  // only very weak upwards gravity
   const world = engine.world;
   world.gravity.x = 0;
   world.gravity.y = -0.1;
@@ -76,6 +106,7 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
   const windowHeight = mainContainer.height();
   const windowWidth = mainContainer.width();
 
+  // briefly create a bubble to get the effective CSS properties
   const dummyInstance = $('<img class="bubble"></img>');
   bubbleContainer.append(dummyInstance);
   const bubbleWidth = parseFloat(dummyInstance.css('width'));
@@ -85,8 +116,10 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
 
   // creating boundaries
   const upperBoundary = Bodies.rectangle(
-    windowWidth / 2, -circleRadius,
-    windowWidth + 2 * circleRadius, 10,
+    windowWidth / 2,
+    -circleRadius,
+    windowWidth + 2 * circleRadius,
+    10,
     {
       isStatic: true
     }
@@ -96,8 +129,10 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
   const boundaryHeight = fillHeight * 1.5;
 
   const leftBoundary = Bodies.rectangle(
-    -circleRadius, boundaryHeight / 2,
-    10, boundaryHeight,
+    -circleRadius,
+    boundaryHeight / 2,
+    10,
+    boundaryHeight,
     {
       isStatic: true
     }
@@ -105,47 +140,49 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
   World.add(world, leftBoundary);
 
   const rightBoundary = Bodies.rectangle(
-    windowWidth + circleRadius, boundaryHeight / 2,
-    10, boundaryHeight,
+    windowWidth + circleRadius,
+    boundaryHeight / 2,
+    10,
+    boundaryHeight,
     {
       isStatic: true
     }
   );
   World.add(world, rightBoundary);
 
-  // create content placeholders
+  // those elements occupy the space needed to see the pages' contents
   for (const page of $('.page')) {
     const yOffset = page.offsetTop + page.offsetHeight / 2;
-    console.log(yOffset);
-    const element = Bodies.rectangle(
-      windowWidth / 2, yOffset,
-      100, 100,
-      {
-        isStatic: true
-      }
-    );
+    const element = Bodies.rectangle(windowWidth / 2, yOffset, 100, 100, {
+      isStatic: true
+    });
     World.add(world, element);
   }
 
-  // calculate number of bubbles bubbles
+  // calculate the number of bubbles
   // https://math.stackexchange.com/questions/2548513/maximum-number-of-circle-packing-into-a-rectangle
-  const areaToFill = (windowWidth + 2 * circleRadius) * (fillHeight + circleRadius);
+  const areaToFill =
+    (windowWidth + 2 * circleRadius) * (fillHeight + circleRadius);
   const fillableArea = (areaToFill * Math.PI) / (2 * Math.sqrt(3));
   const bubbleArea = circleRadius * circleRadius * Math.PI;
   const numberOfBubbles = Math.floor(fillableArea / bubbleArea);
 
+  // create the bubbles
   const bubbles = [];
-
   for (let i = 0; i < numberOfBubbles; i++) {
-    const bubble = new Circle(bubbleContainer,
+    const bubble = new Circle(
+      bubbleContainer,
       Math.random() * windowWidth,
-      Math.random() * fillHeight);
+      Math.random() * fillHeight
+    );
     bubbles.push(bubble);
     World.add(world, bubble.body);
   }
 
-  // await jumpForwardInSimulation(engine, 5)
-
+  /*
+   *  this is all just for debugging
+   */
+  // this is a debug renderer
   var render = Render.create({
     element: bubbleContainer.get(0),
     engine: engine,
@@ -163,8 +200,7 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
   Runner.run(runner, engine);
   Render.run(render);
 
-  // scrollContainer.scroll(() => console.log(scrollContainer.scrollTop()))
-
+  // adjust the debug render frame to the scrolling position
   requestAnimationFrame(function renderCb () {
     const scrollOffset = scrollContainer[0].scrollTop * parallexFactor;
     Render.lookAt(render, {
@@ -174,7 +210,14 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
     requestAnimationFrame(renderCb);
   });
 
-  /* let oldTime;
+  /*
+   *  debugging ends here
+   */
+
+  // no real rendering for now
+  /*
+  // remember previous timing values
+  let oldTime;
   let lastDelta = 10;
   requestAnimationFrame(function render (time) {
     if (oldTime) {
@@ -187,6 +230,7 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
     }
     oldTime = time;
 
+    // schedule the next render
     requestAnimationFrame(render);
 
     const height = $('.bubble').height();
@@ -200,15 +244,22 @@ async function setupBubbles (bubbleContainer, scrollContainer) {
       const yOffset = position.y - height / 2;
       const xOffset = position.x - width / 2;
 
-      domElement.css('transform', `translate3d(${xOffset}px, ${yOffset - scrollOffset}px, 0)`);
+      // apply offset via translate3d
+      // that is optimized for performance in most browsers
+      domElement.css(
+        'transform',
+        `translate3d(${xOffset}px, ${yOffset - scrollOffset}px, 0)`
+      );
     }
-  }); */
+  });
+  */
 }
 
 class Circle {
   constructor (parent, x, y) {
-    const face = Math.floor(Math.random() * 10 + 1);
-    const facePath = `/assets/images/landing_page/faces/${face}.jpg`;
+    // select a random face
+    const faceNumber = Math.floor(Math.random() * 10 + 1);
+    const facePath = `/assets/images/landing_page/faces/${faceNumber}.jpg`;
 
     const element = $(`<img class="bubble" src="${facePath}"></img>`);
     parent.append(element);
@@ -217,10 +268,7 @@ class Circle {
     const elementMargin = parseFloat(element.css('margin'));
     const bodyRadius = elementWidth / 2 + elementMargin;
 
-    const body = Bodies.circle(
-      x, y,
-      bodyRadius
-    );
+    const body = Bodies.circle(x, y, bodyRadius);
 
     this.element = element;
     this.body = body;
@@ -230,14 +278,3 @@ class Circle {
 function setupYoutubeVideo (element) {
   Plyr.setup(element);
 }
-
-$(() => {
-  const mainContainer = $('main');
-  setupScrollAnimation(mainContainer);
-
-  // no bubbles for now
-  // const bubbleContainer = $('.bubble-container')
-  // setupBubbles(bubbleContainer, mainContainer)
-
-  setupYoutubeVideo('.video-player');
-});
