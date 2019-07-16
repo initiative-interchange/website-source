@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && webpack && bundle exec jekyll build",
     "serve": "npm run build && concurrently \"webpack --watch\" \"bundle exec jekyll serve --watch\"",
-    "clean": "shx rm -rf assets/js"
+    "clean": "shx rm -rf assets/js _site"
   },
   "author": "",
   "license": "ISC",
