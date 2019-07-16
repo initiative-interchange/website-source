@@ -8,20 +8,20 @@
             {% if gsize == 0%}
 
             <div class="nav-item">
-                <a href="{{ item.link }}" class="small-green-header">
+                <a href="{{ item.link }}">
                     {{ item.name }}
                 </a>
             </div>
 
             {% else %}
 
-            <div class="nav-item extra-extra-small-spacing-bottom">
+            <div class="nav-item extra-small-spacing">
                 <a href="{{ item.link }}" class="small-green-header">
                     {{ item.name }}
                 </a>
-                <div class="group">
+                <div class="group extra-small-spacing">
                     {% for sub_item in item.groups %}
-                    <a href="{{ sub_item.link }}" class="text-slightly-smaller text-center extra-extra-small-spacing-bottom">
+                    <a href="{{ sub_item.link }}" class="text-center extra-extra-small-spacing-bottom">
                         {{ sub_item.name }}
                     </a>
                     {% endfor %}
