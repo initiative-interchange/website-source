@@ -1,6 +1,8 @@
 ---
 name: Anna Careen Schmid
-occupation: Student | Law | Juridicum Vienna
+occupation: 
+  - Law
+  - Juridicum Vienna
 ressort:
   - administration
 roles:

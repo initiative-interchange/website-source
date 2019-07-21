@@ -1,6 +1,8 @@
 ---
 name: Ariel Noah Simulevski
-occupation: Student | Software & Information Engineering | TU Vienna
+occupation: 
+  - Software & Information Engineering
+  - TU Vienna
 ressort:
   - administration
   - philantropy

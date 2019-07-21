@@ -1,6 +1,8 @@
 ---
 name: Marilena Shupac
-occupation: Student | Chemistry | NYU Abu Dhabi
+occupation: 
+  - Chemistry
+  - NYU Abu Dhabi
 ressort: interaction
 roles:
   - Head of Interchange Eastern Europe

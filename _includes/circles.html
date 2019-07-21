@@ -6,7 +6,11 @@
   <img src="assets/images/contact/faces/{{ member.face }}"/>
   <figcaption>
     <p class="text board-member-name">{{ member.name }}</p>
-    <p class="text board-member">{{ member.occupation }}</p>
+    <div class="small-spacing">
+      {% for row in member.occupation %}
+      <p class="text board-member">{{ row }}</p>
+      {% endfor %}
+    </div>
 
     <div class="small-spacing">
       {% for role in member.roles %}

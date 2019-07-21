@@ -1,6 +1,8 @@
 ---
 name: Paul Klocker
-occupation: Student | Economics and Law | WU Vienna
+occupation: 
+  - Economics and Law
+  - WU Vienna
 ressort: administration
 roles:
   - General administration

@@ -1,6 +1,8 @@
 ---
 name: Mario Stepanik
-occupation: Student | Economics and Management | University of Oxford
+occupation: 
+  - Economics and Management
+  - University of Oxford
 ressort: 
   - interaction
   - philantropy

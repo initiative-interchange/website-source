@@ -1,6 +1,7 @@
 ---
 name: Hana Pašalić
-occupation: Student | IB Diploma Programme Sarajevo
+occupation: 
+  - IB Diploma Programme Sarajevo
 ressort: interaction
 roles:
   - Head of Interchange Western Europe

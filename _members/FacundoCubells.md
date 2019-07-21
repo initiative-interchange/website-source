@@ -1,6 +1,7 @@
 ---
 name: Facundo Cubells
-occupation: Student
+occupation: 
+  - Student
 ressort: interaction
 roles:
   - Representative for Argentina

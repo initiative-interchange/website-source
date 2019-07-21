@@ -1,6 +1,8 @@
 ---
 name: Marlene Tröstl
-occupation: Student | Philosophy, Politics, and Economics | VU Amsterdam
+occupation: 
+  - Philosophy, Politics, and Economics
+  - VU Amsterdam
 ressort: interaction
 roles:
   - Founding Member

@@ -1,6 +1,7 @@
 ---
 name: Daniel Gafke-Mendoza
-occupation: Student | Gymnasium Dresden-Plauen
+occupation: 
+  - Gymnasium Dresden-Plauen
 ressort: interaction
 roles:
   - Representative for Germany
