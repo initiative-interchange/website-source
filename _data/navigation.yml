@@ -22,14 +22,6 @@
     - name: partners
       link: /philantropy#partners
 
-- name: events
-  link: /blank
-  groups:
-    - name: upcoming events
-      link: /#
-    - name: past events
-      link: /#
-
 - name: news
   link: /#
 
