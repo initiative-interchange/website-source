@@ -14,7 +14,7 @@ When we reach out to young people from all around the world, it is our goal to g
 Nobody understands the urgency of this challenge as well as young people. Many of us want to give everyone the chances we had, but individual efforts are often inefficient because they are uncoordinated. Interchange connects young people because we want to channel the energy and talent to make this future world reality. We believe that the whole is more than the sum of its parts – we want to create the whole.
 
 <div class="normal-spacing full-width video">
-  <img src="assets/images/interactors/world.svg" class="prominent-image" />
+  <img src="/assets/images/interactors/world.svg" class="prominent-image" />
 </div>
 
 <div class="column-layout normal-spacing">
