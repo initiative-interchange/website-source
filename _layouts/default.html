@@ -29,7 +29,13 @@
     </main>
     {% include nav.html %}
 
-    {% assign import_scripts = page.scripts | push: 'nav' %}
+    {% assign import_scripts = 'nav' | split: ',' %}
+    {% if page.scripts %}
+        {% assign import_scripts = page.scripts | concat: import_scripts %}
+    {% endif %}
+    {% if layout.scripts %}
+        {% assign import_scripts = layout.scripts | concat: import_scripts %}
+    {% endif %}
 
     {% assign js_files = site.static_files | where: "script", true %}
     {% assign import_files = '' | split: ',' %}
