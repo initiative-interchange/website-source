@@ -27,8 +27,8 @@ Every Interact Club which participates in our initiative has the possibility to 
 
 
 
-{:class="medium"}
+{:class="medium large-spacing text-center"}
 Find us on
 
-{:class="no-spacing"}
+{:class="no-spacing text-center"}
 [unicef.at/interchange](https://unicef.at/interchange)
