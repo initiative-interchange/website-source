@@ -22,9 +22,6 @@
     - name: partners
       link: /philantropy#partners
 
-- name: news
-  link: /#
-
 - name: contact us
   link: /contact-us
   groups:
