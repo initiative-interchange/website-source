@@ -1,0 +1,15 @@
+---
+layout: default
+scripts:
+  - info_page
+---
+<div class="content info-page">
+  <div class="hero">
+    <img class="background" src="{{ page.hero_image }}" />
+    <div class="hero-header-wrapper">
+      <h1 class="hero-header white-header-text">{{ page.headline }}</h1>
+    </div>
+  </div>
+  {{ content }}
+  <div class="nav-button-spacer"></div>
+</div>
