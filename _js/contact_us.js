@@ -210,7 +210,7 @@ class Circle {
   static fromDOMNode (domNode, keepPosition = false) {
     const element = $(domNode);
     const parent = element.parent();
-    const margin = parseFloat(element.css('margin'));
+    const margin = parseFloat(element.css('margin-top'));
 
     // read id from dom property
     const id = element.data('id');
