@@ -1,10 +1,29 @@
 import $ from 'jquery';
 import anime from 'animejs';
 
+const navBackgroundEntryAnimation = anime({
+  targets: 'nav > .background',
+  opacity: [0, 1],
+  duration: 200,
+  easing: 'linear',
+  autoplay: false
+});
+
+const navBackgroundExitAnimation = anime({
+  targets: 'nav > .background',
+  opacity: [1, 0],
+  duration: 200,
+  easing: 'linear',
+  autoplay: false,
+	complete: function(anim){
+			$('nav').removeClass('open');}
+});
+
 const itemExitAnimation = anime({
   targets: '.nav-item',
   opacity: [1, 0],
-  duration: 200,
+	translateY: [0, 50],
+  duration: 300,
   easing: 'easeOutQuint',
   autoplay: false
 });
@@ -12,9 +31,9 @@ const itemExitAnimation = anime({
 const itemEntryAnimation = anime({
   targets: '.nav-item',
   opacity: [0, 1],
-  translateY: [200, 1],
+  translateY: [100, 0],
   duration: 400,
-  delay: anime.stagger(60),
+  delay: anime.stagger(40),
   easing: 'easeOutQuint',
   autoplay: false
 });
@@ -97,12 +116,13 @@ export function open () {
   reset();
   barEntryAnimation.play();
   itemEntryAnimation.play();
+	navBackgroundEntryAnimation.play();
 }
 export function close () {
-  $('nav').removeClass('open');
   reset();
   barExitAnimation.play();
   itemExitAnimation.play();
+	navBackgroundExitAnimation.play();
 }
 export function isOpen () {
   return $('nav').hasClass('open');

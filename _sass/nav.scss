@@ -3,6 +3,11 @@
   grid-area: nav;
 }
 
+nav > * {
+	user-select: none;
+	-moz-user-select: none;
+}
+
 nav {
   width: 100vw;
   height: 100vh;
@@ -18,7 +23,6 @@ nav {
 
     display: none;
     opacity: 0;
-    transition: opacity 0.2s;
   }
 
   .links-wrapper {

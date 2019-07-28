@@ -1,33 +1,53 @@
 @import 'colors.scss';
 
 @font-face {
-  font-family: "Avenir Next Ultra Light";
+  font-family: "Avenir Next";
   src: url("/assets/fonts/AvenirNext-UltraLight.ttf");
+  font-weight: 200;
 }
 
 @font-face {
-  font-family: "Avenir Next Italic";
+  font-family: "Avenir Next";
+  src: url("/assets/fonts/AvenirNext-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Avenir Next";
   src: url("/assets/fonts/AvenirNext-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
 }
 
 @font-face {
-  font-family: "Avenir Next Regular";
+  font-family: "Avenir Next";
   src: url("/assets/fonts/AvenirNext-Regular.ttf");
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: "Avenir Next Medium";
+  font-family: "Avenir Next";
   src: url("/assets/fonts/AvenirNext-Medium.ttf");
+  font-weight: 500;
 }
 
 @font-face {
-  font-family: "Avenir Next Demi Bold";
+  font-family: "Avenir Next";
   src: url("/assets/fonts/AvenirNext-DemiBold.ttf");
+  font-weight: 600;
 }
 
 @font-face {
-  font-family: "Avenir Next Bold";
+  font-family: "Avenir Next";
   src: url("/assets/fonts/AvenirNext-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/assets/fonts/AvenirNext-HeavyItalic.ttf");
+  font-weight: 800;
+  font-style: italic;
 }
 
 $small-screen-width: 320px;
@@ -38,8 +58,23 @@ html {
   font-size: calc(#{$font-scale-factor}*(100vw - #{$small-screen-width}) + #{$base-font-size});
 }
 
+@mixin text-justify-center {
+  text-align: justify;
+	text-align-last: center;
+}
+
+.text-justify-center {
+	@include text-justify-center()
+}
+
 @mixin text-center {
-  text-align: center;
+		text-align: center;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	font-size: 70%;
 }
 
 .text-center {
@@ -47,9 +82,11 @@ html {
 }
 
 @mixin header-text {
-  font-family: 'Avenir Next Ultra Light';
+  font-family: 'Avenir Next';
+  font-weight: 800;
+  font-style: italic;
   font-size: 3.1rem;
-  line-height: 3.7rem;
+  //line-height: 3.7rem;
   text-decoration: none;
 }
 
@@ -73,9 +110,10 @@ html {
 
 @mixin white-header-text {
   color: $white;
-  font-family: 'Avenir Next Ultra Light';
+  font-family: 'Avenir Next';
+  font-weight: 800;
+  font-style: italic;
   font-size: 4.1rem;
-  line-height: 3.7rem;
   text-decoration: none;
 }
 
@@ -92,8 +130,9 @@ html {
   @include grey-header-text();
 }
 
-@mixin text($font-family: 'Avenir Next Regular') {
+@mixin text($font-family: 'Avenir Next') {
   color: $dark-grey;
+	font-weight: 300;
   font-family: $font-family;
   font-size: 1.4rem;
   line-height: 155%;
@@ -123,7 +162,8 @@ html {
 }
 
 @mixin medium-text {
-  @include text('Avenir Next Medium');
+  @include text('Avenir Next');
+	font-weight: 500;
 }
 
 .text.medium {
@@ -131,7 +171,8 @@ html {
 }
 
 @mixin demi-bold-text {
-  @include text('Avenir Next Demi Bold');
+  @include text('Avenir Next');
+	font-weight: 600;
 }
 
 .text.demi-bold {
@@ -139,7 +180,8 @@ html {
 }
 
 @mixin light-text {
-  @include text('Avenir Next Ultra Light');
+  @include text('Avenir Next');
+	font-weight: 200;
   color: $light-grey;
   font-size: 1.8rem;
   line-height: 3.7rem;
@@ -172,7 +214,8 @@ html {
 }
 
 .text.continent-heading {
-  @include text('Avenir Next Bold');
+  @include text('Avenir Next');
+	font-weight: 700;
   letter-spacing: 2.1px;
 }
 
@@ -184,7 +227,8 @@ html {
 }
 
 .text.article-meta {
-  @include text('Avenir Next Italic');
+  @include text('Avenir Next');
+	font-style: italic;
   color: $light-grey;
   font-size: .9rem;
 }

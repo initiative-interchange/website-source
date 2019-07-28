@@ -21,6 +21,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+		margin: 40px 0;
 
     //scroll-snap-align: center;
 
@@ -35,7 +36,7 @@ main {
     }
 
     p {
-      @include normal-spacing();
+      @include small-spacing();
     }
 
     &:first-of-type {
@@ -65,10 +66,6 @@ main {
     .video-player-wrapper {
       width: 100vw;
       height: 100%;
-      // arbitrarily set
-      max-width: 600px;
-      margin-top: 10%;
-      margin-bottom: 10%;
     }
 
     .icon {
@@ -83,10 +80,14 @@ main {
     .buttons {
       height: 2.8rem;
       @include normal-spacing();
-
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+			
+			:first-child {
+				background: $interchange-green;
+				color: $white;
+			}
 
       a {
         width: calc((100% - #{$normal-spacing}) / 2);
@@ -95,9 +96,13 @@ main {
         background: transparent;
         text-decoration: none;
         color: $interchange-green;
-        font-family: 'Avenir Next Bold';
+        font-family: 'Avenir Next';
+				padding-top: .1rem;
+				font-weight: 800;
+				font-style: italic;
         border: $interchange-green .15rem solid;
       }
+			
     }
   }
 
