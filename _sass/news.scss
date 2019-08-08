@@ -1,0 +1,172 @@
+.content.news {
+  .hero-header-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .category-links {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+
+      width: 80%;
+
+      a {
+        @include white-text();
+        margin: $extra-small-spacing;
+
+        &.active {
+          overflow: visible;
+          font-family: "Avenir Next Demi Bold";
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  .articles {
+    .article {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      @include mq($until: desktop) {
+        max-width: map-get($mq-breakpoints, tablet);
+        flex-direction: column;
+
+        img.thumbnail {
+          width: 100%;
+          height: 250px;
+        }
+
+        .info {
+          margin-top: $small-spacing;
+          width: 80%;
+        }
+      }
+      @include mq($from: desktop) {
+        flex-direction: row;
+        width: map-get($mq-breakpoints, desktop) - 200px;
+
+        img.thumbnail {
+          width: 400px;
+          height: 400px;
+        }
+      }
+
+      img.thumbnail {
+        object-fit: cover;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .preview {
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+
+.content.article {
+  @include blurry_background;
+  width: 100%;
+
+  .hero {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+
+    .background {
+      @include cover;
+      object-fit: cover;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+
+    .hero-header-wrapper {
+      @include cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+        position: absolute;
+        top: $large-spacing;
+        @include text('Avenir Next Demi Bold');
+        @include text-center();
+        letter-spacing: 1rem;
+        font-size: 1.3rem;
+        line-height: 3.7rem;
+        color: $white;
+      }
+
+      h1 {
+        width: 70%;
+        @include text('Avenir Next Demi Bold');
+        @include text-center();
+        letter-spacing: 2.1px;
+        font-size: 2.2rem;
+        line-height: 3.7rem;
+        color: $white;
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::after {
+      content: "";
+      @include large-spacing();
+    }
+
+    > h2 {
+      width: 80%;
+    }
+
+    > p {
+      width: 75%;
+    }
+
+    .block-image {
+      width: 40%;
+    }
+
+    .prominent-image {
+      width: 100vw;
+      // arbitrarily set
+      max-width: 700px;
+      max-height: 400px;
+    }
+
+    .video {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    a,
+    p:not([class]) {
+      @include text();
+      @include text-center();
+      @include normal-spacing();
+      text-align: justify;
+    }
+
+    a {
+      @include underlined-text();
+    }
+
+    h2 {
+      @include green-header-text();
+      @include text-center();
+      @include large-spacing();
+    }
+  }
+}
