@@ -196,14 +196,24 @@
       @include large-spacing();
     }
 
-    .float-right {
+    blockquote {
+      @include text();
+      margin: 0 $extra-large-spacing;
+      @include normal-spacing();
+      font-size: 2rem;
+
+      padding-left: $small-spacing;
+      border-left: 3px solid $interchange-green;
+    }
+
+    @mixin float($direction) {
       height: auto;
       margin: 0 $normal-spacing;
       margin-top: $normal-spacing;
 
       @include mq($from: tablet) {
         width: calc(50% - #{$normal-spacing});
-        float: right;
+        float: $direction;
       }
 
       @include mq($until: tablet) {
@@ -211,6 +221,38 @@
         margin: 0 auto;
         margin-top: $normal-spacing;
       }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .float-right {
+      @include float(right);
+    }
+
+    .float-left {
+      @include float(left);
+    }
+
+    .half-page-centered {
+      height: auto;
+      width: 40%;
+      margin: 0 auto;
+      margin-top: $normal-spacing;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .full-page-centered {
+      height: auto;
+      width: calc(90% - 2*#{$normal-spacing});
+      margin: 0 auto;
+      margin-top: $normal-spacing;
 
       img {
         width: 100%;
@@ -234,9 +276,11 @@
     }
 
     .video {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 60%;
+      height: auto;
+      min-width: map-get($mq-breakpoints, mobile);
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Plyr from 'plyr';
 import 'slick-carousel';
 
 $(() => {
@@ -9,4 +10,6 @@ $(() => {
     slidesToShow: 1,
     adaptiveHeight: true
   });
+
+  Plyr.setup('.video-player');
 });
