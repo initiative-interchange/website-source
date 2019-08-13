@@ -199,6 +199,7 @@
     .float-right {
       height: auto;
       margin: 0 $normal-spacing;
+      margin-top: $normal-spacing;
 
       @include mq($from: tablet) {
         width: calc(50% - #{$normal-spacing});
@@ -208,6 +209,7 @@
       @include mq($until: tablet) {
         width: 60%;
         margin: 0 auto;
+        margin-top: $normal-spacing;
       }
 
       img {

@@ -2,7 +2,7 @@
 layout: article_page
 headline: How an Austrian Rotary Club’s donation will improve the lives of 1.400 children
 author: Initiative Interchange
-publish_date: 2018-04-08
+publish_date: 2019-04-08
 hero_image: RC Hofburg Titelbild_bearbeitet.jpg
 ---
 
