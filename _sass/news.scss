@@ -119,8 +119,18 @@
 
     .background {
       @include cover;
-      object-fit: cover;
       clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+      img {
+        @include cover;
+        object-fit: cover;
+      }
+
+      &:after {content: '';
+        position: absolute;
+        @include cover;
+        background: radial-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.4), rgba(0,0,0,0.1))
+      }
     }
 
     .hero-header-wrapper {
@@ -131,7 +141,7 @@
 
       h2 {
         position: absolute;
-        top: $large-spacing;
+        top: $normal-spacing;
         @include text('Avenir Next Demi Bold');
         @include text-center();
         letter-spacing: 1rem;
@@ -148,6 +158,7 @@
         font-size: 2.2rem;
         line-height: 3.7rem;
         color: $white;
+        text-transform: uppercase;
       }
     }
   }
@@ -156,22 +167,15 @@
     width: 100%;
     max-width: map-get($mq-breakpoints, desktop);
     margin: 0 auto;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    &::after {
-      content: "";
-      @include large-spacing();
-    }
+    padding-bottom: $large-spacing;
 
     > h2 {
-      width: 80%;
+      margin: 0 $small-spacing;
     }
 
     > p {
-      width: 75%;
+      margin: 0 $normal-spacing;
     }
 
     > a,
@@ -192,10 +196,32 @@
       @include large-spacing();
     }
 
+    .float-right {
+      height: auto;
+      margin: 0 $normal-spacing;
+
+      @include mq($from: tablet) {
+        width: calc(50% - #{$normal-spacing});
+        float: right;
+      }
+
+      @include mq($until: tablet) {
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
     .carousel {
       width: 60%;
       min-width: map-get($mq-breakpoints, mobile);
       overflow: visible;
+      margin-left: auto;
+      margin-right: auto;
 
       @include mq($until: desktop) {
 

@@ -29,7 +29,7 @@ scripts:
     </div>
   </div>
   <div class="articles">
-  {% assign sorted = site.news | sort: 'publish_date' %}
+  {% assign sorted = site.news | sort: 'publish_date' | reverse %}
   {% for article in sorted %}
     {% include article.html article=article %}
   {% endfor %}

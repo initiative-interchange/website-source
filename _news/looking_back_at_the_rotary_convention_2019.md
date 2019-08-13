@@ -2,8 +2,8 @@
 layout: article_page
 headline: Looking back at the Rotary Convention 2019
 author: Initiative Interchange
-publish_date: June 13, 2019
-hero_image: /assets/images/news/Hamburg3.jpeg
+publish_date: 2019-06-13
+hero_image: Hamburg3.jpeg
 ---
 
 This year, Interchange attended its first Rotary Convention in Hamburg. This annual event brings together thousands of passionate Rotarians, Rotaractors and Interactors to share their progress, exchange ideas and discuss future projects. The environment and general atmosphere were truly inspiring! No matter where you went in the beautiful city of Hamburg, you would always be amongst other Rotarians; helpful and interested people from all over the world. One Interchange representative said: 
