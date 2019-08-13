@@ -21,6 +21,9 @@
       link: /philantropy#why-we-support-education
     - name: partners
       link: /philantropy#partners
+    
+- name: news
+  link: /news
 
 - name: contact us
   link: /contact-us
