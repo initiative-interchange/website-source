@@ -3,9 +3,9 @@
 <a class="article large-spacing" href="{{ article.url}}">
   <img class="thumbnail" src="{{ article.hero_image }}"/>
   <div class="info">
-    <p class="text article-meta">{{ article.author }} | {{ article.publish_date }}</p>
+    <p class="article-meta">{{ article.author }} | {{ article.publish_date | date: '%B %d, %Y' }}</p>
     <h3 class="text article-heading small-spacing">{{ article.headline }}</h3>
-    <p class="text article-text small-spacing preview">{{ article.content | strip_html | truncatewords: 60 }}</p>
+    <p class="small-spacing preview">{{ article.content | strip_html | truncatewords: 60 }}</p>
   </div>
 </a>
 

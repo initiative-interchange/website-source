@@ -1,0 +1,8 @@
+
+{% assign images = include.images | split: ';' %}
+
+<div class="carousel normal-spacing">
+  {% for path in images %}
+  <img src="/assets/images/news/{{ path | strip }}" />
+  {% endfor %}
+</div>

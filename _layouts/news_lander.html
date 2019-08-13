@@ -16,6 +16,7 @@ scripts:
     <img class="background" src="/assets/images/news/header_image.jpg" />
     <div class="hero-header-wrapper">
       <h1 class="hero-header white-header-text">news</h1>
+      {% comment %}
       <ul class="category-links">
         {% include news_category_link.html category='All' %}
         {% include news_category_link.html category='Events' %}
@@ -24,10 +25,12 @@ scripts:
         {% include news_category_link.html category='Interact' %}
         {% include news_category_link.html category='Interchange' %}
       </ul>
+      {% endcomment %}
     </div>
   </div>
   <div class="articles">
-  {% for article in site.news %}
+  {% assign sorted = site.news | sort: 'publish_date' %}
+  {% for article in sorted %}
     {% include article.html article=article %}
   {% endfor %}
   </div>
