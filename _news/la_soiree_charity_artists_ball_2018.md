@@ -25,4 +25,4 @@ Russian violinist Yury Revich, ECHO Classic winner and best young violinist in t
 At 10p.m., a true charity event classic was moderated by Michael Schmidt-Ott: At the La Soirée Charity Auction, dozens of guests participated in bidding for eight unique and iconic items, among these a Montblanc Fountain Pen Meisterstück “Elbphilharmonie”, a Louis Vuitton Malle Sherpa Bag, a painting of the artist Alexander Kiessling and an issue of National Geographic signed by Dr Jane Goodall – all sponsored by the respective individuals and companies.   
 In the end, the proceeds of the evening enabled Initiative Interchange to give more than 1,000 Syrian children an access to education via UNICEF.
 
-{% include youtube-video.html link='https://www.youtube.com/watch?v=vYxAqGp7SmQ' %}
+{% include youtube-video.html link='https://www.youtube.com/embed/vYxAqGp7SmQ' %}

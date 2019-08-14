@@ -23,4 +23,4 @@ It is our responsibility to try and start counteracting this shortcoming!
 
 Everybody is able to aid: contributions to Initiative Interchange benefit entirely into the reconstruction of Syrian schools - bear in mind that a 5€ donation is synonymous with four years of primary education for a Syrian child!
 
-{% include youtube-video.html link='https://youtu.be/0XTBYMfZyrM'%}
+{% include youtube-video.html link='https://www.youtube.com/embed/0XTBYMfZyrM'%}
