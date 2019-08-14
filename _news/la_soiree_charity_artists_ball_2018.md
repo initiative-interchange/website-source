@@ -18,7 +18,7 @@ Until the wee hours, dancers floated over the dance floor of the Kursalon Vienna
 
 In the midst of the hustle and bustle of the evening, the context of the ball did not get lost: All proceeds of the ball were donated to UNICEF, with whom the organizers – the youth network Initiative Interchange – work in international cooperation. The philanthropic goal of the initiative is to connect young members of the Rotary family around the world to raise money for universal primary education. At La Soirée, the climax of the Interchange Convention for young people earlier that day, the completely unexpected number of 400 guests from Austria, Switzerland, Bosnia, France, Poland, Moldova, and the United States gathered to support the goal.
 
-{% include image_float_right.html name='Lennard-Lindner_Rotarie-La-SoirÃ©e_05._Mai_2018_116.jpg' %}
+{% include image_float_right.html name='Lennard-Lindner_Rotarie-La-Soiree_05_Mai_2018_116.jpg' %}
 
 Russian violinist Yury Revich, ECHO Classic winner and best young violinist in the world, was one of the passionate supporters who donated their time and talent: At midnight, lights went out and deathly silence prevailed until the sound of Revich’s 1709 Stradivari filled the vacuum. He was not the only act to impress the international audience: Austria’s most talented young artists from all kinds of disciplines teamed up to create a breathtaking experience: Brendan Goh (18-year-old cellist who performed at Carnegie Hall, New York), Allegra Tinnefeld (13-year-old violinist and finalist in Das Supertalent), Maria Gschwandtner (professional contortionist), Lucca Lucian (Vice World Champion of Mental Magic), and several other outstanding artists made the evening unforgettable.
 

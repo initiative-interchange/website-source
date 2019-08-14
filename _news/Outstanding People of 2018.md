@@ -6,7 +6,7 @@ publish_date: 2018-12-14
 hero_image: IMG_1456.JPG.jpg
 ---
 
-{% include image_half_page_centered.html name="Lennard-Lindner_Rotarie-La-SoirÃ©e_05._Mai_2018_154_preview.jpeg" %}
+{% include image_half_page_centered.html name="Lennard-Lindner_Rotarie-La-Soiree_05_Mai_2018_154_preview.jpeg" %}
 
 Energetic, challenging, inspiring: Over the course of the last year, we met a number of people who did incredible things, gave us the means to evolve, and contributed so much time and effort that we want to thank them. UNICEF, our strong international cooperation partner, made possible that we have a strong foundation to work towards our goal of an access to education for every child. The organization of the first global Interact conference – the Interchange the World \| 2018 Convention – and of our enchanting Artists‘ Ball „La Soirée“ to raise funds was supported by individuals and institutions from Boston to Singapore. All of these people deserve a big Thank you:
 
