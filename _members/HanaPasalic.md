@@ -5,5 +5,5 @@ occupation:
 ressort: interaction
 roles:
   - Head of Interchange Western Europe
-face: 'Hana Pašalić.png'
+face: 'Hana Pasalic.png'
 ---
