@@ -92,6 +92,7 @@ nav {
 
 nav.open {
   pointer-events: all;
+  touch-action: all;
   
   .background {
     opacity: 1;

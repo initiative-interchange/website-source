@@ -1,0 +1,286 @@
+.content.news {
+  .hero-header-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .category-links {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+
+      width: 80%;
+
+      a {
+        @include white-text();
+        margin: $extra-small-spacing;
+
+        &.active {
+          overflow: visible;
+          font-family: "Avenir Next Demi Bold";
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  .articles {
+    .article {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      margin-top: $normal-spacing;
+
+      img.thumbnail {
+        object-fit: cover;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+
+        .article-meta {
+          @include text('Avenir Next Italic');
+          color: $light-grey;
+        }
+
+        .article-heading {
+          text-transform: uppercase;
+        }
+
+        .preview {
+          @include text('Avenir Next Regular');
+          color: $grey;
+          text-align: justify;
+        }
+      }
+
+      @include mq($until: desktop) {
+        max-width: map-get($mq-breakpoints, tablet);
+        flex-direction: column;
+
+        img.thumbnail {
+          width: 100%;
+          height: 250px;
+        }
+
+        .info {
+          margin-top: $small-spacing;
+          width: 80%;
+          align-items: center;
+
+          .article-meta {
+            font-size: .9rem;
+          }
+
+          .preview {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      @include mq($from: desktop) {
+        flex-direction: row;
+        width: calc(#{map-get($mq-breakpoints, desktop)} - #{2*$small-spacing});
+
+        img.thumbnail {
+          width: 400px;
+          height: 400px;
+          flex-shrink: 0;
+          flex-grow: 0;
+        }
+
+        .info {
+          margin-left: $normal-spacing;
+          align-items: flex-start;
+          text-align: left;
+
+          .article-meta {
+            font-size: .7rem;
+          }
+
+          .preview {
+            font-size: .7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content.article {
+  @include blurry_background;
+  width: 100%;
+
+  .hero {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+
+    .background {
+      @include cover;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+      img {
+        @include cover;
+        object-fit: cover;
+      }
+
+      &:after {content: '';
+        position: absolute;
+        @include cover;
+        background: radial-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.4), rgba(0,0,0,0.1))
+      }
+    }
+
+    .hero-header-wrapper {
+      @include cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+        position: absolute;
+        top: $normal-spacing;
+        @include text('Avenir Next Demi Bold');
+        @include text-center();
+        letter-spacing: 1rem;
+        font-size: 1.3rem;
+        line-height: 3.7rem;
+        color: $white;
+      }
+
+      h1 {
+        width: 70%;
+        @include text('Avenir Next Demi Bold');
+        @include text-center();
+        letter-spacing: 2.1px;
+        font-size: 2.2rem;
+        line-height: 3.7rem;
+        color: $white;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+    max-width: map-get($mq-breakpoints, desktop);
+    margin: 0 auto;
+
+    padding-bottom: $large-spacing;
+
+    > h2 {
+      margin: 0 $small-spacing;
+    }
+
+    > p {
+      margin: 0 $normal-spacing;
+    }
+
+    > a,
+    > p:not([class]) {
+      @include text();
+      @include text-center();
+      @include normal-spacing();
+      text-align: justify;
+    }
+
+    > a {
+      @include underlined-text();
+    }
+
+    > h2 {
+      @include green-header-text();
+      @include text-center();
+      @include large-spacing();
+    }
+
+    blockquote {
+      @include text();
+      margin: 0 $extra-large-spacing;
+      @include normal-spacing();
+      font-size: 2rem;
+
+      padding-left: $small-spacing;
+      border-left: 3px solid $interchange-green;
+    }
+
+    @mixin float($direction) {
+      height: auto;
+      margin: 0 $normal-spacing;
+      margin-top: $normal-spacing;
+
+      @include mq($from: tablet) {
+        width: calc(50% - #{$normal-spacing});
+        float: $direction;
+      }
+
+      @include mq($until: tablet) {
+        width: 60%;
+        margin: 0 auto;
+        margin-top: $normal-spacing;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .float-right {
+      @include float(right);
+    }
+
+    .float-left {
+      @include float(left);
+    }
+
+    .half-page-centered {
+      height: auto;
+      width: 40%;
+      margin: 0 auto;
+      margin-top: $normal-spacing;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .full-page-centered {
+      height: auto;
+      width: calc(90% - 2*#{$normal-spacing});
+      margin: 0 auto;
+      margin-top: $normal-spacing;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .carousel {
+      width: 60%;
+      min-width: map-get($mq-breakpoints, mobile);
+      overflow: visible;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mq($until: desktop) {
+
+        .slick-arrow {
+          display: none !important;
+        }
+      }
+    }
+
+    .video {
+      width: 60%;
+      height: auto;
+      min-width: map-get($mq-breakpoints, mobile);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

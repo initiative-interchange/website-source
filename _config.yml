@@ -15,9 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 
 collections:
-  - events
-  - articles
-  - members
+  events:
+  news:
+    output: true
+    permalink: /news/articles/:name
+  members:
 
 defaults:
   - scope:

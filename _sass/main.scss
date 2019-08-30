@@ -1,4 +1,6 @@
 
+
+@import 'colors.scss';
 $mq-breakpoints: (
     mobile:  320px,
     tablet:  740px,
@@ -8,6 +10,12 @@ $mq-breakpoints: (
 
 @import '../node_modules/sass-mq/_mq.scss';
 
+@import '../node_modules/slick-carousel/slick/slick.scss';
+$slick-loader-path: '/assets/images/';
+$slick-font-path:   '/assets/fonts/';
+$slick-arrow-color: $interchange-green;
+@import '../node_modules/slick-carousel/slick/slick-theme.scss';
+
 @import 'common.scss';
 @import 'nav.scss';
 @import 'landing_page.scss';
@@ -15,6 +23,7 @@ $mq-breakpoints: (
 @import 'contact_us.scss';
 @import 'join_us.scss';
 @import 'donate.scss';
+@import 'news.scss';
 
 * {
     overflow:hidden;

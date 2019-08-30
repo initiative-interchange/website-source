@@ -189,6 +189,12 @@ html {
   font-size: .9rem;
 }
 
+.text.article-text {
+  @include text('Avenir Next Regular');
+  color: $grey;
+  font-size: .9rem;
+}
+
 @mixin board-ressort-heading {
   @include text();
   letter-spacing: .17rem;

@@ -1,0 +1,22 @@
+---
+layout: default
+scripts:
+  - info_page
+  - article_page
+---
+<div class="content article">
+  <div class="hero">
+    <div class="background">
+        <img src="/assets/images/news/{{ page.hero_image }}" />
+    </div>
+    <div class="hero-header-wrapper">
+      <h2>NEWS</h2>
+      <h1>{{ page.headline }}</h1>
+    </div>
+  </div>
+  <p class="text article-meta text-center">{{ page.author }} | {{ page.publish_date | date: '%B %d, %Y' }}</p>
+  <div class="content">
+    {{ content }}
+  </div>
+  <div class="nav-button-spacer"></div>
+</div>
