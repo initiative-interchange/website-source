@@ -141,7 +141,7 @@
 
       h2 {
         position: absolute;
-        top: $normal-spacing;
+        top: $small-spacing;
         @include text('Avenir Next Demi Bold');
         @include text-center();
         letter-spacing: 1rem;
