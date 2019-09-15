@@ -1,0 +1,20 @@
+---
+layout: default
+scripts:
+- info_page
+---
+
+<div class="content info-page events">
+  <div class="hero">
+    <img class="background" src="/assets/images/news/header_image.jpg" />
+    <div class="hero-header-wrapper">
+      <h1 class="hero-header white-header-text">events</h1>
+    </div>
+  </div>
+  <div class="events">
+  {% assign sorted = site.events | sort: 'date' | reverse %}
+  {% for event in sorted %}
+    {% include event.html event=event %}
+  {% endfor %}
+  </div>
+</div>

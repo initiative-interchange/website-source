@@ -22,6 +22,9 @@
     - name: partners
       link: /philantropy#partners
     
+- name: events
+  link: /events
+
 - name: news
   link: /news
 
