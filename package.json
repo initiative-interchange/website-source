@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && webpack && bundle exec jekyll build",
-    "serve": "npm run build && concurrently \"webpack --watch\" \"bundle exec jekyll serve --watch\"",
+    "serve": "npm run build && concurrently \"webpack --watch\" \"bundle exec jekyll serve --watch --host=0.0.0.0\"",
     "clean": "shx rm -rf assets/js _site"
   },
   "author": "",

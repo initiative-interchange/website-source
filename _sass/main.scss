@@ -25,11 +25,6 @@ $slick-arrow-color: $interchange-green;
 @import 'donate.scss';
 @import 'news.scss';
 
-* {
-    overflow:hidden;
-    scrollbar-width: none;
-}
-
 ::-webkit-scrollbar { 
     display: none; 
 }

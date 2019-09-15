@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="{{ page.classes | join: ' ' }}">
         {{ content }}
     </main>
     {% include nav.html %}

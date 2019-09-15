@@ -1,19 +1,9 @@
 @import 'spacing.scss';
 
-main {
-  //overflow-y: scroll;
-  //scroll-behavior: smooth;
-  //scroll-snap-type: y mandatory;
-}
-
 .content.landing-page {
   @include blurry_background;
   width: 100%;
-
-  &::after {
-    content: '';
-    @include large-spacing();
-  }
+  padding-bottom: $extra-large-spacing;
 
 
   .page {
@@ -52,6 +42,8 @@ main {
     &.sdg {
       width: 50%;
       @include extra-large-spacing();
+      margin-left: auto;
+      margin-right: auto;
 
       * {
         width: 100%;

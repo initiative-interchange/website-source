@@ -7,8 +7,8 @@ window.decomp = PolyDecomp;
 
 // when the document is loaded...
 $(() => {
-  const mainContainer = $('main');
-  setupScrollAnimation(mainContainer);
+  const windowContainer = $(window);
+  setupScrollAnimation(windowContainer);
 
   // no bubbles for now
   // const bubbleContainer = $('.bubble-container')
