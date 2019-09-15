@@ -94,18 +94,20 @@ function reset () {
 
 export function open () {
   $('nav').addClass('open');
+  $('main').addClass('nav-open');
   reset();
   barEntryAnimation.play();
   itemEntryAnimation.play();
 }
 export function close () {
   $('nav').removeClass('open');
+  $('main').removeClass('nav-open');
   reset();
   barExitAnimation.play();
   itemExitAnimation.play();
 }
 export function isOpen () {
-  return $('nav').hasClass('open');
+  return $('nav').hasClass('open') || $('main').hasClass('nav-open');
 }
 export function toggle () {
   if (isOpen()) {

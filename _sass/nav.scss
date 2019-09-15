@@ -31,7 +31,10 @@ nav {
 
     .links {
       height: 100%;
-      padding-top: 10%;
+      padding-top: 10vh;
+      @include mq($until: tablet) {
+        padding-top: 20vh;
+      }
 
       display: flex;
       flex-direction: column;
@@ -88,6 +91,12 @@ nav {
       }
     }
   }
+}
+
+main.nav-open {
+  height: 100vh;
+  overflow-y: hidden;
+  position: fixed;
 }
 
 nav.open {
