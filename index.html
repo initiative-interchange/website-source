@@ -1,97 +1,123 @@
----
-layout: default
-scripts:
-- landing_page
-classes:
-- content
-- landing-page
-title: Initiative Interchange
----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Initiative Interchange - Home</title>
+		<link rel="stylesheet" href="css/styles.css" type="text/css">
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, user-scalable=0" name="viewport" />
+	</head>
+	
+	<body ontouchstart>
+		<div class="nav">
+			<div class="nav-total-container">
+				<div class="nav-link-container">
+					<a href="/">Home</a>
+					<div class="nav-popup-link-container">
+						<a href="/donate" class="nav-popup-link">Donate</a>
+						<a href="/join-us" class="nav-popup-link">Join Us</a>
+					</div>
+				</div>
 
-<div class="top-page-spacer"></div>
+				<div class="nav-link-container">
+					<a href="/interactors">Interactors</a>
+					<div class="nav-popup-link-container">
+						<a href="/interactors#why-we-connect-young-people" class="nav-popup-link">Why We Connect Young People</a>
+						<a href="/interactors#members" class="nav-popup-link">Members</a>
+					</div>
+				</div>
 
-<section class="page fade-out">
-    <img class="rotary-banner" src="/assets/images/logo.svg" />
-    <h1 class="green-header-text text-center">
-        we want to reconstruct the future
-    </h1>
-    <p class="text text-center">
-        We connect young people around the world to make universal primary education possible. We gave over 5,000
-        children an access to education, organized events in over ten countries, and were invited to the UN General
-        Assembly 2018.
-    </p>
-    <div class="buttons">
-        <a href="/donate">DONATE</a>
-        <a href="/join-us">JOIN US</a>
-    </div>
-</section>
-<section class="page hidden fade-in fade-out">
-    <img class="icon" src="/assets/images/landing_page/connect.svg" />
-    <h1 class="green-header-text text-center">
-        connecting interactors worldwide.
-    </h1>
-    <p class="text text-center">
-        Initiative Interchange is a platform that helps members of the Rotary youth organization Interact from
-        all around the world to connect with one another. Our declared goals are developing friendships as well
-        as organizing get-togethers to foster international cooperation.
-    </p>
-    <p class="text-center text medium">
-        Find out more on
-    </p>
-    <div class="centered-columns">
-        <a class="text underline text-center">
-            Interactors
-        </a>
-        <a class="text underline text-center">
-            Events
-        </a>
-        <a class="text underline text-center">
-            News
-        </a>
-    </div>
-</section>
-<section class="page hidden fade-in fade-out">
-    <div class="video-player-wrapper">
-        <div class="plyr__video-embed video-player">
-            <iframe
-                src="https://www.youtube.com/embed/58fmIeyGeDA?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                allowfullscreen allowtransparency allow="autoplay"></iframe>
-        </div>
-    </div>
-</section>
-<section class="page hidden fade-in">
-    <img class="icon" src="/assets/images/landing_page/goal.svg" />
-    <h1 class="green-header-text text-center">
-        one common goal
-    </h1>
-    <p class="text text-center">
-        We would like our cooperation to matter. To this end, every single donation which is collected by the
-        Interact Clubs that are part of our network is used for one shared goal: primary school education for
-        everyone.
-    </p>
-    <p class="text text-center">
-        Together, we aim to raise a total of €1,000,000 towards the construction of schools – a sum which
-        enables us to provide 200,000 children with an
-        access to the basic human right of education. </p>
-    <p class="text-center text medium">
-        Find out more on
-    </p>
-    <div class="centered-columns">
-        <a class="text underline text-center">
-            Philanthropy
-        </a>
-        <a class="text underline text-center">
-            News
-        </a>
-        <a class="text underline text-center">
-            unicef.at/interchange
-        </a>
-    </div>
-</section>
-<section class="page sdg">
-    <p class="text text-center sdg">
-        WORKING TOWARDS THE
-        UN SUSTAINABLE DEVELOPMENT GOALS
-    </p>
-    <img src="/assets/images/landing_page/sdg.svg">
-</section>
+				<div class="nav-link-container">
+					<a href="/philantropy">Philantropy</a>
+					<div class="nav-popup-link-container">
+						<a href="/philantropy#why-we-support-education" class="nav-popup-link">Why We Support Education</a>
+						<a href="/philantropy#partners" class="nav-popup-link">Partners</a>
+					</div>
+				</div>
+
+				<div class="nav-link-container">
+					<a href="/events">Events</a>
+				</div>
+
+				<div class="nav-link-container">
+					<a href="/news">News</a>
+				</div>
+
+				<div class="nav-link-container">
+					<a href="/contact-us">Contact</a>
+				</div>
+				</div>
+		</div>
+		
+		<div class="hamburger hamburger--spin">
+			<div class="hamburger-box">
+				<div class="hamburger-inner"></div>
+			</div>
+		</div>
+		
+		<div class="frontpage-animation-container">
+			<div class="frontpage-animation-center-container" id="photo-grid-container">
+				<div class="statement">
+					<object data="resources/images/logo_neu.svg" type="image/svg+xml" class="logo"></object>
+					<h1>We want to reconstruct the future.</h1>
+					<p class="emphasis">We connect young people around the world to make universal primary education possible. We gave over 5,000 children access to education, have organized events in over ten countries, and were invited to the UN General Assembly 2018.</p>
+					<div class="button-container switchtocolumn">
+						<button type="button" onclick="window.location.href = 'https://www.apple.com';" class="emphasized-button">Donate</button>
+						<button type="button" onclick="window.location.href = 'https://www.apple.com';">Join Us</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="map-and-text">
+			<div class="world-map"></div>
+			<div class="main-container" style="height: 1000px;">
+			<div class="textboxes">
+				<div class="text-flyin-box">
+					<object data="resources/images/connect.svg" type="image/svg+xml" class="textbox-mood-image"></object>
+					<h2>Connecting Interactors Worldwide.</h2>
+					<p>Initiative Interchange is a platform that helps members of the Rotary youth organization Interact from all around the world connect with one another. Our goals are developing friendships as well as organizing get-togethers to foster international cooperation.</p>
+					<p class="textbox-links">Find out more: <a href="#">Interactors</a><a href="#">Events</a><a href="#">News</a></p>
+				</div>
+				
+				<hr style="width: 30%; border: .5px solid #166762; margin: 30px auto;"/>
+				
+				<div class="text-flyin-box">
+					<object data="resources/images/goal.svg" type="image/svg+xml" class="textbox-mood-image"></object>
+					<h2>One Common Goal.</h2>
+					<p>We want our cooperation to make a lasting impact. To this end, every single donation received by the Interact Clubs partaking in our network is used to build towards one shared goal: primary school education for everyone. <br/>
+					Together, we aim to raise a total of €1,000,000.- for the construction of schools – a sum that will enbale us to provide 200,000 children with access to the basic human right of education.</p>
+					<p class="textbox-links">Find out more: <a href="#">Philantrophy</a><a href="#">News</a><a href="#">unicef.at/interchange</a></p>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		<div class="fullscreen-video">
+			<iframe id="youtube-109" frameborder="0" allowfullscreen="1" allowusermedia allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="Player for Project Interchange" src="https://www.youtube.com/embed/58fmIeyGeDA?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;cc_lang_pref=auto&amp;widget_referrer=https%3A%2F%2Fwww.initiative-interchange.org%2F&amp;noCookie=false&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.initiative-interchange.org&amp;widgetid=1"></iframe>
+		</div>
+		
+		<div class="footer">
+			<div class="main-container switchtocolumn">
+				<div>
+					<h2>UN sustainable development goals (SDGs)</h2>
+					<object data="resources/images/sdg.svg" type="image/svg+xml"></object>
+				</div>
+				<hr/>
+				<div class="footer-links">
+					<a href="#">Credits & Licenses</a>
+					<a href="#">Legal Stuff</a>
+					<a href="https://www.rotary.org/en">Rotary International</a>
+				</div>
+				<hr/>
+				<div>
+					<p>Made with love in Vienna. 🖤</p>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/anime.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="js/jquery.parallax-scroll.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
