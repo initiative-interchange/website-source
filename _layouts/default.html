@@ -26,9 +26,57 @@
 <body>
     <main class="{{ page.classes | join: ' ' }}">
         {{ content }}
-        <div class="nav-button-spacer"></div>
     </main>
-    {% include nav.html %}
+
+    <div class="nav">
+        <div class="nav-total-container">
+            <div class="nav-link-container">
+                <a href="/">Home</a>
+                <div class="nav-popup-link-container">
+                    <a href="/donate" class="nav-popup-link">Donate</a>
+                    <a href="/join-us" class="nav-popup-link">Join Us</a>
+                </div>
+            </div>
+
+            <div class="nav-link-container">
+                <a href="/interactors">Interactors</a>
+                <div class="nav-popup-link-container">
+                    <a href="/interactors#why-we-connect-young-people" class="nav-popup-link">Why We Connect Young People</a>
+                    <a href="/interactors#members" class="nav-popup-link">Members</a>
+                </div>
+            </div>
+
+            <div class="nav-link-container">
+                <a href="/philantropy">Philantropy</a>
+                <div class="nav-popup-link-container">
+                    <a href="/philantropy#why-we-support-education" class="nav-popup-link">Why We Support Education</a>
+                    <a href="/philantropy#partners" class="nav-popup-link">Partners</a>
+                </div>
+            </div>
+
+            <div class="nav-link-container">
+                <a href="/events">Events</a>
+            </div>
+
+            <div class="nav-link-container">
+                <a href="/news">News</a>
+            </div>
+
+            <div class="nav-link-container">
+                <a href="/contact-us">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hamburger hamburger--spin">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>  
+    <script src="/js/anime.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/js/jquery.parallax-scroll.js"></script>
+    <script src="/js/nav_main.js"></script>
 
     {% assign import_scripts = 'nav' | split: ',' %}
     {% if page.scripts %}
