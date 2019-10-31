@@ -183,6 +183,9 @@
       @include text();
       @include text-center();
       @include normal-spacing();
+      @include mq($from: desktop) {
+        font-size: .8rem;
+      }
       text-align: justify;
     }
 
