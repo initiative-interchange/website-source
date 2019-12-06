@@ -30,6 +30,16 @@
   src: url("/assets/fonts/AvenirNext-Bold.ttf");
 }
 
+@font-face {
+  font-family: "EB Garamond SC Regular";
+  src: url("/assets/fonts/EBGaramondSC.otf")
+}
+
+@font-face {
+  font-family: "Garamond Medium-Italic";
+  src: url("/assets/fonts/garmndmi.ttf")
+}
+
 $small-screen-width: 320px;
 $font-scale-factor: 0.01;
 $base-font-size: 10px;
@@ -92,6 +102,16 @@ html {
   @include grey-header-text();
 }
 
+@mixin xmas-header-text {
+  @include header-text();
+  font-family: "EB Garamond SC Regular";
+}
+
+.xmas-header-text {
+  @include xmas-header-text();
+  font-variant: small-caps;
+}
+
 @mixin text($font-family: 'Avenir Next Regular') {
   color: $dark-grey;
   font-family: $font-family;
@@ -106,6 +126,14 @@ html {
 
 .text {
   @include text();
+}
+
+@mixin xmas-title-text {
+  @include text("Garamond Medium-Italic");
+}
+
+.xmas-title-text {
+  @include xmas-title-text();
 }
 
 @mixin white-text() {

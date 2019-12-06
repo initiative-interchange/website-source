@@ -1,0 +1,42 @@
+
+.content.xmas {
+  @include blurry_background();
+  @include centered-columns();
+
+  padding: $normal-spacing;
+
+  .main-content {
+    max-width: map-get($mq-breakpoints, tablet);
+    width: 100%;
+    //background: red;
+
+    .cards {
+      display: flex;
+      flex-direction: row;
+
+      justify-content: space-between;
+
+      p.text {
+        text-align: justify;
+      }
+
+      figure {
+        width: 48%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @include mq($until: tablet) {
+        flex-direction: column;
+        align-items: center;
+
+        figure {
+          width: 100%;
+          max-height: 90vh;
+        }
+      }
+    }
+  }
+}
