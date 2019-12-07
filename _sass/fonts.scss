@@ -223,6 +223,12 @@ html {
   font-size: .9rem;
 }
 
+.text.xmas-product-description {
+  @include text('Avenir Next Regular');
+  color: $grey;
+  font-size: 1.2rem;
+}
+
 @mixin board-ressort-heading {
   @include text();
   letter-spacing: .17rem;

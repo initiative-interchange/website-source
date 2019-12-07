@@ -8,17 +8,16 @@
   .main-content {
     max-width: map-get($mq-breakpoints, tablet);
     width: 100%;
-    //background: red;
+    
+    a {
+      color: #166762;
+    }
 
     .cards {
       display: flex;
       flex-direction: row;
 
       justify-content: space-between;
-
-      p.text {
-        text-align: justify;
-      }
 
       figure {
         width: 48%;
