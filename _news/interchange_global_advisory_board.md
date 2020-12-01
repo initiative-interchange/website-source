@@ -2,6 +2,7 @@
 layout: article_page
 headline: INTERCHANGE PUSHES THROUGH GLOBAL ADVISORY BOARD WITH ROTARY INTERNATIONAL
 author: Initiative Interchange
+hero_image: NY_3.jpeg
 publish_date: 2020-12-01
 ---
 
