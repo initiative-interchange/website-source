@@ -18,6 +18,4 @@ This would not have been possible without a number of amazing individuals. On th
 
 Thank you to the thousands of Interactors and Rotarians who have supported us over the last few years. It has been an incredible journey.
 
----
-
 A lot has happened over the last three years. You may be interested in how Mario and Marlene spoke at the World Summit of Nobel Peace Laureates, our participation in the Rotary International Convention in Hamburg, Mario’s and Anna’s invitation to the 2018 UN General Assembly or our global Interact events, including the Interchange the World | 2018 Convention and the Charity Artists’ Ball La Soirée.
