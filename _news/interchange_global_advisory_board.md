@@ -5,7 +5,7 @@ author: Initiative Interchange
 publish_date: 2020-12-01
 ---
 
-**Vienna.** The last few weeks have been a particularly special time for Initiative Interchange. Founded three years ago with the mission to connect all Interact members in the world, we finally reached our final milestone. Two weeks ago, the President-elect of Rotary International, India’s Shekhar Mehta, announced that our proposal to establish a global Interact Advisory Board has been accepted and that applications are now open.
+The last few weeks have been a particularly special time for Initiative Interchange. Founded three years ago with the mission to connect all Interact members in the world, we finally reached our final milestone. Two weeks ago, the President-elect of Rotary International, India’s Shekhar Mehta, announced that our proposal to establish a global Interact Advisory Board has been accepted and that applications are now open.
 
 This is the first time in Rotary’s 115-year-long history that Rotary’s youth is represented formally on the highest level of Rotary International. From the next Rotarian year on, a group of 10 dedicated young people who represent our community of over 500,000 members. 
 
