@@ -30,24 +30,3 @@ Interchange is a platform that helps Interactors (young members of the internati
 ## how we connect young people
 
 We are in contact via social media as well as personal meetings. To facilitate the formation of friendships, we organize regular events and conferences in several countries (see [Events](/#) for an overview of past and upcoming events). Every Interact Club is welcome to join by simply submitting the form on our [Join us](/#) page. You will receive all information needed to connect with other Interactors and to change the world with them for the better.
-
-## members
-
-The following Interact clubs have joined Initiative Interchange, sorted alphabetically by continent, country and club name. You can send them an e-mail by clicking on the name of the club.
-
-{% for continent in site.data.continents %}
-<h3 class="continent-heading text text-center normal-spacing">
-{{ continent.name | upcase }}
-</h3>
-{% for country in continent.countries %}
-<h4 class="country-heading text text-center small-spacing">
-{{ country.name }}
-</h4>
-
-<div class="column-layout small-spacing">
-{% for club in country.clubs %}
-<p class="no-spacing text text-center">{{ club }}</p>
-{% endfor %}
-</div>
-{% endfor %}
-{% endfor %}
