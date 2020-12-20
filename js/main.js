@@ -43,7 +43,7 @@ function generatePortraits(responsiveSize) {
 		portraitAmount = 20;
 	}
 
-	var images = ['resources/images/faces/1.png', 'resources/images/faces/2.png', 'resources/images/faces/3.png', 'resources/images/faces/4.png', 'resources/images/faces/5.png', 'resources/images/faces/6.png', 'resources/images/faces/7.png', 'resources/images/faces/8.png', 'resources/images/faces/9.png', 'resources/images/faces/10.png', 'resources/images/faces/11.png', 'resources/images/faces/12.png', 'resources/images/faces/13.png', 'resources/images/faces/14.png']; // Alle Bilder für die Portraits
+	var images = ['resources/images/faces/1.png', 'resources/images/faces/2.png', 'resources/images/faces/3.png', 'resources/images/faces/4.png', 'resources/images/faces/5.png', 'resources/images/faces/6.png', 'resources/images/faces/7.png', 'resources/images/faces/8.png', 'resources/images/faces/9.png', 'resources/images/faces/10.png', 'resources/images/faces/11.png', 'resources/images/faces/12.png', 'resources/images/faces/13.png', 'resources/images/faces/14.png', 'resources/images/faces/15.png', 'resources/images/faces/16.png', 'resources/images/faces/17.png', 'resources/images/faces/18.png', 'resources/images/faces/19.png', 'resources/images/faces/20.png', 'resources/images/faces/21.png']; // Alle Bilder für die Portraits
 
 
 	// Schaut, ob die Anzahl der Reihen ungerade oder gerade ist, weil nämlich in dieser Situation x0 in der Mitte des Viewports ist,
