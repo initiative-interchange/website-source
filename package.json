@@ -37,6 +37,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "shx": "^0.3.2",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.12"
   }
 }
